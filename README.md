@@ -19,7 +19,7 @@ The best operating system for developers. Program in fast motion with this worki
 * ```Print``` take a screenshot
 * ```Super+E``` emoji picker
 * ```Ctrl+Space``` focus on the next window
-* ```Super+drag window``` turn on the floating window and move/resize it with the left and right click
+* ```Super+drag window``` turn on the floating window and move/resize it with Super + the left and right click
 * ```Super+T``` turn on/off the floating window for the window you have in focus at the moment
 * ```Super+F``` turn on/off fullscreen for the window you have in focus at the moment
 * ```Super+W``` closes the window in focus
