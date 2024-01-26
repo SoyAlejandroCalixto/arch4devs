@@ -16,7 +16,7 @@ The best operating system for developers. Program in fast motion with this worki
 * ```Super+Enter``` open terminal
 * ```Super+Space``` open applications menu
 * ```Super+Number``` change workspace
-* ```Print``` take a screenshotfocus on the next window
+* ```Print``` take a screenshot
 * ```Super+E``` emoji picker
 * ```Ctrl+Space``` focus on the next window
 * ```Super+drag window``` turn on the floating window and move/resize it with the left and right click
