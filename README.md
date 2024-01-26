@@ -19,6 +19,8 @@ The best operating system for developers. Program in fast motion with this worki
 * ```Print``` take a screenshot
 * ```Super+E``` emoji picker
 * ```Ctrl+Space``` focus on the next window
+* ```Super+I/J/K/L``` resizes the window that is in focus
+* ```Ctrl+Super+I/J/K/L``` moves the window that is in focus
 * ```Super+drag window``` turn on the floating window and move/resize it with Super + left/right click
 * ```Super+T``` turn on/off the floating window for the window you have in focus at the moment
 * ```Super+F``` turn on/off fullscreen for the window you have in focus at the moment
@@ -34,7 +36,7 @@ The best operating system for developers. Program in fast motion with this worki
 
 ~ **Install the necessary packages:**
 ~~~
-sudo pacman -S --noconfirm --needed qtile alsa-utils polybar polkit-gnome rofi flameshot zsh gnome-characters nautilus kitty gnome-system-monitor discord unzip
+sudo pacman -S --noconfirm --needed qtile alsa-utils polybar polkit-gnome rofi flameshot zsh gnome-characters nautilus kitty gnome-system-monitor discord unzip lsd bat
 
 yay -S --noconfirm --needed brave-bin visual-studio-code-bin pamac-all spotify
 
