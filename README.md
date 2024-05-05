@@ -47,11 +47,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ~~~
 
-~ **Extract the ```arch4devs``` folder in your ```/home/<user>``` directory**
-
-![nautilus extracting arch4devs](https://github.com/SoyAlejandroCalixto/arch4devs/assets/97924741/426706b6-b829-4986-9890-753a75249b1f)
-
-by terminal: ```unzip ~/arch4devs.zip```
+~ **Clone the arch4devs repository**
+~~~
+git clone https://github.com/SoyAlejandroCalixto/arch4devs.git
+~~~
+And put all its contents in your ```/home/<user>``` folder *(except the readme, the license and the .gitignore)*
 
 ~ Then, **restart your computer** and in your display manager **change the session to ```QTile```** and log in.
 
