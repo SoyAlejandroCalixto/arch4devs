@@ -10,12 +10,12 @@ The best operating system for developers. Program in fast motion with this worki
 
 ~ **Default shortcuts**
 
-* ```Ctrl+Super+B``` open Brave browser
-* ```Ctrl+Super+D``` open Discord
-* ```Ctrl+Super+C``` open VSCode
+* ```Super+Alt+B``` open Brave browser
+* ```Super+Alt+D``` open Discord
+* ```Super+Alt+C``` open VSCode
 * ```Super+Enter``` open terminal
 * ```Super+Space``` open applications menu
-* ```Super+Number``` change workspace
+* ```Super+1-9``` change workspace
 * ```Print``` take a screenshot
 * ```Super+E``` emoji picker
 * ```Ctrl+Space``` focus on the next window
@@ -26,7 +26,6 @@ The best operating system for developers. Program in fast motion with this worki
 * ```Super+F``` turn on/off fullscreen for the window you have in focus at the moment
 * ```Super+W``` closes the window in focus
 * ```Super+O/P``` Volume down/up (it can also be done from the polybar)
-* ```Super+Ctrl+Q``` Shutdown
 
 ### 🗁 Install guide
 
@@ -36,7 +35,7 @@ The best operating system for developers. Program in fast motion with this worki
 
 ~ **Install the necessary packages:**
 ~~~
-sudo pacman -S --noconfirm --needed qtile alsa-utils polybar polkit-gnome rofi flameshot zsh gnome-characters nautilus kitty gnome-system-monitor discord unzip lsd bat
+sudo pacman -S --noconfirm --needed qtile alsa-utils polybar polkit-gnome rofi flameshot picom zsh gnome-characters nemo kitty gnome-system-monitor discord fontconfig unzip lsd bat
 
 yay -S --noconfirm --needed brave-bin visual-studio-code-bin pamac-all spotify
 
@@ -62,17 +61,20 @@ If you are an average user, this guide is over for you, but if you meet any of t
 <details>
 <summary>Do you have more than one screen?</summary>
   
-If you have a second screen, you must modify these 3 files:
+If you have more than one screen, you must modify these 3 files:
 
-Go to ```~/.config/qtile/autostart.sh``` and replace the text there with the following:
+Go to ```~/.config/qtile/autostart.sh``` and add ```polybar rightbar &``` if you want to load another polybar on another monitor and not just one:
 ~~~
 #!/bin/sh
+picom &
 polybar leftbar &
 polybar rightbar &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 ~~~
 
-Go to ```~/.config/qtile/config.py``` and replace the Python list named ```screens``` with this one:
+*(you can also create as many polybars as you want for all your monitors if you wish)*
+
+Now go to ```~/.config/qtile/modules/visual.py``` and add to the Python list named ```screens``` as many ```screen()`` as you have screens, for example, if you have 2 monitors:
 ~~~
 screens = [
     Screen(
@@ -91,7 +93,14 @@ Go to ```~/.config/polybar/config.ini``` and look for the part that says:
 [bar/rightbar]
 monitor = HDMI-1
 ~~~
-and in the ```monitor``` property change ```HDMI-1``` by the connector that you have, i.e. if you use **Display Port** you should put ```DP-1```, if you use DVI-D you should put ```DVI-D-1```, and if you use HDMI you can leave it as it is in ```HDMI-1```.
+and in the ```monitor``` property change ```HDMI-1``` to the connector you have on the monitor where you want to put this second polybar (if you only want to have a single polybar, ignore this), i.e. if you use **Display Port** you should put ```DP-1```, if you use DVI-D you should put ```DVI-D-1```, and if you use HDMI you can leave it as it is in ```HDMI-1```.
+
+If you want to change the **main monitor**, add this line as the first command in your ```~/.config/qtile/autostart.sh```:
+~~~
+#!/bin/sh
+xrandr --output DP-1 --primary &
+...
+~~~
 
 **Restart the computer.**
 </details>
@@ -101,7 +110,7 @@ and in the ```monitor``` property change ```HDMI-1``` by the connector that you 
 
 To change the language of certain elements that polybar has, go to ```~/.config/polybar/config.ini``` and look where it says:
 ~~~
-[bar/leftbar]
+[bar/<any bar>]
 # locale = es_ES.UTF-8
 ~~~
 

@@ -104,4 +104,4 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-neofetch --kitty ~/.custom_icons/archlinuxlogo.png --size 320px --xoffset 1 --colors 4 10 10 12 10 15 --ascii_colors 4 4 4 4
+neofetch --colors 4 10 10 12 10 15 --ascii_colors 4 4 4 4
