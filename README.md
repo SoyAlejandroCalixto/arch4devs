@@ -1,10 +1,11 @@
-![arch4devs](https://github.com/SoyAlejandroCalixto/arch4devs/assets/97924741/1f3a8d30-c0eb-472a-9637-ec241b383d61)
+![welcome to arch4devs](https://github.com/SoyAlejandroCalixto/arch4devs/assets/97924741/ea0fd3db-20ac-49f0-877d-43026d058139)
 
 ## Arch Linux working environment for developers
 
 The best operating system for developers. Program in fast motion with this working environment 🚀.
 
-![arch4devs screenshot](https://github.com/SoyAlejandroCalixto/arch4devs/assets/97924741/dd3aba29-59d5-4c2d-a334-5e3cf40ee08b)
+![arch4devs screenshot](https://github.com/SoyAlejandroCalixto/arch4devs/assets/97924741/32159b60-efe6-4dad-b53b-ff605b58dfdb)
+
 
 **Note:** If you already have an Arch Linux installation with any other desktop environment than QTile, this installation will not conflict with your current Arch, i.e. nothing will happen to your original installation and you can have this working environment completely parallel to your regular Arch without compromising your current operating system.
 
