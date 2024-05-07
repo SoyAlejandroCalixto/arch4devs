@@ -94,9 +94,9 @@ Go to ```~/.config/polybar/config.ini``` and look for the part that says:
 [bar/rightbar]
 monitor = HDMI-1
 ~~~
-and in the ```monitor``` property change ```HDMI-1``` to the connector you have on the monitor where you want to put this second polybar (if you only want to have a single polybar, ignore this), i.e. if you use **Display Port** you should put ```DP-1```, if you use DVI-D you should put ```DVI-D-1```, and if you use HDMI you can leave it as it is in ```HDMI-1```.
+and in the ```monitor``` property change ```HDMI-1``` to the display where you want to put this second polybar (if you only want to have a single polybar, ignore this), to see the list of displays you have, install the ```xorg-xrandr``` package and run the ```xrandr``` command to see a list.
 
-If you want to change the **main monitor**, install the package ```xorg-xrandr``` and add this line as the first command in your ```~/.config/qtile/autostart.sh```:
+If you want to change the **main monitor**, install the ```xorg-xrandr``` package and add this line as the first command in your ```~/.config/qtile/autostart.sh```:
 ~~~
 #!/bin/sh
 xrandr --output HDMI-1 --primary &
