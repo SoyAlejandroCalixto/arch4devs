@@ -57,7 +57,7 @@ for group in groups:
             Key([super], group.name, lazy.group[group.name].toscreen()),
 
             # super + shift + 1-9 = switch group and move focused window to group
-            Key([super, "shift"], group.name, lazy.window.togroup(group.name, switch_group=True)),
+            Key([super, alt], group.name, lazy.window.togroup(group.name, switch_group=True)),
             
             # or use this one if you prefer not to change the group when moving the window
             
