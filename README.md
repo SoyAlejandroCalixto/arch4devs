@@ -22,6 +22,7 @@ The best operating system for developers. Program in fast motion with this worki
 * ```Ctrl+Space``` focus on the next window
 * ```Super+I/J/K/L``` resizes the window that is in focus
 * ```Ctrl+Super+I/J/K/L``` moves the window that is in focus
+* ```Super+Alt+1-9``` Moves the window in focus to the specified workspace
 * ```Super+drag window``` turn on the floating window and move/resize it with Super + left/right click
 * ```Super+T``` turn on/off the floating window for the window you have in focus at the moment
 * ```Super+F``` turn on/off fullscreen for the window you have in focus at the moment
@@ -57,14 +58,38 @@ And put all its contents in your ```/home/<user>``` folder *(except the readme, 
 
 ![image](https://github.com/SoyAlejandroCalixto/arch4devs/assets/97924741/e8abd385-ce3a-4ab3-a990-5891678c15be)
 
-If you are an average user, this guide is over for you, but if you meet any of the following exceptions, you will need to do some additional steps.
+That is all. However, there are things that can be changed according to the user's preferences, and many of these most frequent cases will be explained below.
+
+### 🪄 Customization
 
 <details>
-<summary>Do you have more than one screen?</summary>
-  
-If you have more than one screen, you must modify these 3 files:
+<summary>I have multiple screens, how do I configure them?</summary>
 
-Go to ```~/.config/qtile/autostart.sh``` and add ```polybar rightbar &``` if you want to load another polybar on another monitor and not just one:
+Go to ```~/.config/qtile/modules/visual.py``` and add to the Python list named ```screens``` as many ```screen()``` objects as you have screens, for example, if you have 2 monitors:
+~~~
+screens = [
+    Screen(
+        wallpaper='~/.local/share/backgrounds/my_wallpaper.png',
+        wallpaper_mode='stretch',
+    ),
+    Screen(
+        wallpaper='~/.local/share/backgrounds/my_wallpaper.png',
+        wallpaper_mode='stretch',
+    ),
+]
+~~~
+
+Then go to ```~/.config/polybar/config.ini``` and look for the part that says:
+~~~
+[bar/rightbar]
+monitor = HDMI-1
+...
+~~~
+and in the ```monitor``` property change ```HDMI-1``` to the display where you want to put this second polybar *(if you only want to have a single polybar, ignore all this)*, to see the list of displays you have, install the ```xorg-xrandr``` package and run the ```xrandr``` command to see a list.
+
+> **Note:** You can create as many polybars as you want for as many monitors as you want, you only have to copy and paste the code of the ```[bar/rightbar]``` as many times as you want, but changing the name ```rightbar``` to avoid duplicity problems, and changing the ```monitor``` property to the desired display.
+
+And finally go to your autostart script, located in ```~/.config/qtile/autostart.sh``` and add ```polybar rightbar &``` to auto-initialize that polybar at login.
 ~~~
 #!/bin/sh
 picom &
@@ -73,41 +98,19 @@ polybar rightbar &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 ~~~
 
-*(you can also create as many polybars as you want for all your monitors if you wish)*
+**Restart the computer.**
 
-Now go to ```~/.config/qtile/modules/visual.py``` and add to the Python list named ```screens``` as many ```screen()`` as you have screens, for example, if you have 2 monitors:
-~~~
-screens = [
-    Screen(
-        wallpaper='~/.local/share/backgrounds/2023-12-01-09-08-12-2023-10-23-21-38-20-image (4).png',
-        wallpaper_mode='stretch',
-    ),
-    Screen(
-        wallpaper='~/.local/share/backgrounds/2023-12-01-09-08-12-2023-10-23-21-38-20-image (4).png',
-        wallpaper_mode='stretch',
-    ),
-]
-~~~
-
-Go to ```~/.config/polybar/config.ini``` and look for the part that says:
-~~~
-[bar/rightbar]
-monitor = HDMI-1
-~~~
-and in the ```monitor``` property change ```HDMI-1``` to the display where you want to put this second polybar (if you only want to have a single polybar, ignore this), to see the list of displays you have, install the ```xorg-xrandr``` package and run the ```xrandr``` command to see a list.
-
-If you want to change the **main monitor**, install the ```xorg-xrandr``` package and add this line as the first command in your ```~/.config/qtile/autostart.sh```:
+In addition, if you want to change the **main monitor**, install the ```xorg-xrandr``` package and add this line as the first command in your autostart script, located in ```~/.config/qtile/autostart.sh```:
 ~~~
 #!/bin/sh
 xrandr --output HDMI-1 --primary &
 ...
 ~~~
-
-**Restart the computer.**
+Changing ```HDMI-1``` to the display you want to set as the main display. Then **restart your computer.**
 </details>
 
 <details>
-<summary>Do you speak a language other than English?</summary>
+<summary>I don't speak English, how do I set the polybar language?</summary>
 
 To change the language of certain elements that polybar has, go to ```~/.config/polybar/config.ini``` and look where it says:
 ~~~
@@ -118,4 +121,59 @@ To change the language of certain elements that polybar has, go to ```~/.config/
 uncomment the line with the ```#``` and put the value you want, for example, ```es_ES.utf-8``` would set the language to Spanish.
 
 **Restart the computer.**
+</details>
+
+<details>
+<summary>How do I change the wallpaper?</summary>
+
+Go to ```~/.config/qtile/modules/visual.py``` and look at the Python list called ```screens```:
+~~~
+screens = [
+    Screen(
+        wallpaper='~/.local/share/backgrounds/7.png',
+        wallpaper_mode='stretch',
+    )
+]
+~~~
+This list has one or more ```Screen()``` objects, whose first parameter is ```wallpaper```, change the path to the path of your desired wallpaper, and **restart the computer**.
+</details>
+
+<details>
+<summary>How do I change the mouse speed?</summary>
+
+install the ```xorg-xinput``` package, and run the ```xinput list``` command to see a list of connected devices along with their ID, and remember the ID of your mouse.
+
+Assuming your mouse has ID ```12```, run ```xinput --list-props 12``` to see the list of properties that your mouse has.
+
+Among all the results it gives you, look for the name of the property that could set the mouse speed. In my case it is ```libinput Accel Speed```, however in your case it could change.
+
+Knowing this, run the command:
+~~~
+xinput --set-prop <your-mouse-id> 'libinput Accel Speed' <a number between -1 and 1>
+~~~
+
+To prevent this from being reset to its default value every time you restart the computer, add the command to your autostart script located at ```~/.config/qtile/autostart.sh```:
+~~~
+#!/bin/sh
+xinput --set-prop 12 'libinput Accel Speed' -0.5 &
+...
+~~~
+</details>
+
+<details>
+<summary>I want to change the key binds to put the ones I want.</summary>
+
+Go to ```~/.config/qtile/modules/binds.py```:
+~~~
+keys_binds = [
+    ...
+    # spawn apps
+    Key([super, alt], "b", lazy.spawn('brave')),
+    Key([super, alt], "c", lazy.spawn('code')),
+    Key([super, alt], "d", lazy.spawn('discord')),
+    Key([super], "Return", lazy.spawn(default_terminal)),
+    ...
+]
+~~~
+Here you will find all current key binds. Modify, delete or add as many as you want in that file, and then **restart the computer** for the changes to take effect. The ```lazy.spawn("command")``` function executes a command.
 </details>
