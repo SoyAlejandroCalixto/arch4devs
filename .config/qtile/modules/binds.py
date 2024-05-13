@@ -61,7 +61,7 @@ for group in groups:
             
             # or use this one if you prefer not to change the group when moving the window
             
-            # Key([super, alt], i.name, lazy.window.togroup(i.name)),
+            # Key([super, alt], group.name, lazy.window.togroup(group.name)),
         ]
     )
 
