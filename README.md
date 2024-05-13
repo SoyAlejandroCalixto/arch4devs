@@ -192,6 +192,8 @@ The only thing left to do now is to set the theme as default. In case you have i
 Inherits=Bibata-Modern-Classic
 ~~~
 
+The next time you **restart your computer** you will have that cursor set.
+
 
 
 </details>
