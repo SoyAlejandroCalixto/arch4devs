@@ -30,7 +30,7 @@ keys_binds = [
     Key([super], "w", lazy.window.kill()),
     Key([super], "f", lazy.window.toggle_fullscreen()),
     Key([super], "t", lazy.window.toggle_floating()), # toggle floating window
-    Key(["control"], "space", lazy.layout.next()), # move focus to next windows
+    Key([alt], "space", lazy.layout.next()), # move focus to next windows
 
     # utils (screenshots, volume, emotes...)
     Key([super], "p", lazy.spawn('amixer -c 0 sset Master 1+ unmute')),
