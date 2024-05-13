@@ -19,7 +19,7 @@ The best operating system for developers. Program in fast motion with this worki
 * ```Super+1-9``` change workspace
 * ```Print``` take a screenshot
 * ```Super+E``` emoji picker
-* ```Ctrl+Space``` focus on the next window
+* ```Alt+Space``` focus on the next window
 * ```Super+I/J/K/L``` resizes the window that is in focus
 * ```Ctrl+Super+I/J/K/L``` moves the window that is in focus
 * ```Super+Alt+1-9``` Moves the window in focus to the specified workspace
