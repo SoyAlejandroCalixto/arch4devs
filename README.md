@@ -177,3 +177,21 @@ keys_binds = [
 ~~~
 Here you will find all current key binds. Modify, delete or add as many as you want in that file, and then **restart the computer** for the changes to take effect. The ```lazy.spawn("command")``` function executes a command.
 </details>
+
+<details>
+<summary>I want to change the cursor theme, how do I do it?</summary>
+
+First, download the theme of your choice, for example, I am going to install the ```Bibata-Modern-Classic``` theme from [here](https://www.pling.com/p/1914825).
+
+If you want to set this cursor for your entire OS, paste the theme folder in ```/usr/share/icons/```.
+
+The only thing left to do now is to set the theme as default. In case you have installed the theme for your entire OS, you must edit the file ```/usr/share/icons/default/index.theme```, and put the following content:
+
+~~~
+[Icon Theme]
+Inherits=Bibata-Modern-Classic
+~~~
+
+
+
+</details>
