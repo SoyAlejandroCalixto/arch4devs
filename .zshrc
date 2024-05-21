@@ -104,4 +104,4 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-neofetch --colors 4 10 10 12 10 15 --ascii_colors 4 4 4 4
+fastfetch --logo-color-1 blue --logo-color-2 blue --color blue --title-color-at green --separator-output-color green

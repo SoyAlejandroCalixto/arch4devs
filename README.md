@@ -37,7 +37,7 @@ The best operating system for developers. Program in fast motion with this worki
 
 ~ **Install the necessary packages:**
 ~~~
-sudo pacman -S --noconfirm --needed qtile alsa-utils polybar polkit-gnome rofi flameshot picom zsh gnome-characters nemo kitty gnome-system-monitor discord fontconfig unzip lsd bat
+sudo pacman -S --noconfirm --needed qtile alsa-utils polybar polkit-gnome rofi fastfetch flameshot picom zsh gnome-characters nemo kitty gnome-system-monitor discord fontconfig unzip lsd bat
 
 yay -S --noconfirm --needed brave-bin visual-studio-code-bin pamac-all spotify
 
