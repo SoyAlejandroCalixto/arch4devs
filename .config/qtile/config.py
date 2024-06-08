@@ -12,8 +12,8 @@ wmname = "ChristIsKing"
 # run this script on startup
 @hook.subscribe.startup_once
 def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
-    subprocess.Popen([home])
+    autostart_path = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.Popen(autostart_path)
 
 # connects the data you set in other modules
 keys = keys_binds
