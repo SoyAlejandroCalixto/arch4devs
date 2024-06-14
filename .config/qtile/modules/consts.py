@@ -2,7 +2,7 @@
 
 from libqtile.config import Group
 
-default_terminal = 'alacritty'
+default_terminal = 'wezterm'
 
 # create the groups
 groups = [Group(i) for i in "123456789"]
