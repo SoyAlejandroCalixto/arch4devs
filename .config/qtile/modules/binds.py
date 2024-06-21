@@ -41,6 +41,7 @@ keys_binds = [
     Key([super], "e", lazy.spawn('gnome-characters')),
     Key([], "Print", lazy.spawn('flameshot gui')),
     Key([super], "space", lazy.spawn('rofi -show drun')),
+    Key([super], "v", lazy.spawn('clipton')),
 
     # spawn apps
     Key([super, alt], "b", lazy.spawn('brave')),
