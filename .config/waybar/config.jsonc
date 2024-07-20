@@ -4,7 +4,7 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)
 
     "modules-left": [
-        "custom/wofi",
+        "custom/rofi",
         "custom/terminal",
         "custom/browser",
         "custom/files",
@@ -51,10 +51,10 @@
       "tooltip": false
     },
 
-    "custom/wofi": {
+    "custom/rofi": {
       "format": "",
       "tooltip": false,
-      "on-click": "wofi --show drun"
+      "on-click": "rofi -show drun"
     },
 
     "custom/terminal": {
