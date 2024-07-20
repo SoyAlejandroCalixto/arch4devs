@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+window#waybar {
+  background-color: #292d34;
+  transition-property: background-color;
+  transition-duration: .5s;
+  font-family: 'CaskaydiaCove Nerd Font';
+  color: #ffffff;
+  min-height: 28px;
+  border-radius: 0 0 12px 12px;
+}
+
+#workspaces button {
+  font-family: 'Font Awesome 6 Free Solid';
+  padding: 0 4px;
+  color: #98c278;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+#workspaces button:hover {
+  background: #545862;
+}
+
+#workspaces button.empty {
+  font-size: 6px;
+  color: #abb3be;
+}
+
+#workspaces button.active {
+  color : #61afef;
+  font-size: 16px;
+}
+
+#pulseaudio-slider {
+  padding-right: 5px;
+  background: #c7374a;
+}
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+}
+
+#pulseaudio-slider trough {
+  min-height: 6px;
+  min-width: 70px;
+  border-radius: 999px;
+  background: #292d34;
+}
+
+#pulseaudio-slider highlight {
+  min-width: 6px;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+#custom-audio-slider-icon {
+  font-family: 'Font Awesome 6 Free Solid';
+  padding: 0 8px;
+  border-radius: 999px 0 0 999px;
+  font-size: 15px;
+  background: #c7374a;
+}
+
+#tray {
+  margin-right: 8px;
+}
+
+#cpu {
+  padding-right: 8px;
+  background: #507a36;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+#custom-cpu-icon {
+  font-family: 'Font Awesome 6 Free Solid';
+  padding: 0 8px;
+  font-size: 15px;
+  background: #507a36;
+}
+
+#memory {
+  padding-right: 8px;
+  background: #c8792e;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+#custom-ram-icon {
+  font-family: 'Font Awesome 6 Free Solid';
+  padding: 0 8px;
+  font-size: 15px;
+  background: #c8792e;
+}
+
+#clock {
+  padding-right: 8px;
+  background: #3279de;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 0 0 12px 0;
+}
+
+#custom-clock-icon {
+  font-family: 'Font Awesome 6 Free Solid';
+  padding: 0 8px;
+  font-size: 15px;
+  background: #3279de;
+}
+
+#custom-wofi {
+  font-family: 'Font Awesome 6 Free Solid';
+  font-size: 15px;
+  margin-left: 12px;
+  color: #e5c07b;
+}
+
+#custom-terminal {
+  font-family: 'Font Awesome 6 Free Solid';
+  font-size: 15px;
+  margin-left: 12px;
+  color: #98c379;
+}
+
+#custom-browser {
+  font-family: 'Font Awesome 6 Brands';
+  font-size: 15px;
+  margin-left: 12px;
+  color: #e08f6c;
+}
+
+#custom-files {
+  font-family: 'Font Awesome 6 Free';
+  font-size: 15px;
+  margin-left: 12px;
+  color: #61afef;
+}
+
+#custom-obsidian {
+  font-family: 'Font Awesome 6 Free Solid';
+  font-size: 15px;
+  margin-left: 12px;
+  color: #8d78dd;
+}
+
+#custom-spotify {
+  font-family: 'Font Awesome 6 Brands';
+  font-size: 15px;
+  margin-left: 12px;
+  color: #98c379;
+}
+
+#custom-discord {
+  font-family: 'Font Awesome 6 Brands';
+  font-size: 15px;
+  margin-left: 12px;
+  color: #6172ef;
+}
+
+#custom-code-editor {
+  font-family: 'Font Awesome 6 Free Solid';
+  font-size: 15px;
+  margin-left: 12px;
+  color: #98c379;
+}
