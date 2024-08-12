@@ -37,9 +37,9 @@ The best operating system for developers. Program in fast motion with this worki
 
 **Install the necessary packages:**
 ~~~
-sudo pacman -S --noconfirm --needed hyprland hyprpaper alsa-utils waybar polkit-kde-agent xdg-desktop-portal-hyprland rofi-wayland clipton fastfetch wl-clipboard wtype zsh rofimoji ranger wezterm neovim discord obsidian dunst fontconfig zip unzip p7zip lsd bat
+sudo pacman -S --noconfirm --needed hyprland hyprpaper zsh alsa-utils waybar polkit-kde-agent xdg-desktop-portal-hyprland rofi-wayland fastfetch wl-clipboard wtype zsh rofimoji ranger wezterm neovim discord obsidian dunst fontconfig zip unzip p7zip lsd bat
 
-paru -S --noconfirm --needed brave-bin spotify grimshot
+paru -S --noconfirm --needed brave-bin spotify clipton-git grimshot
 
 chsh -s /bin/zsh
 
