@@ -18,10 +18,10 @@ The best operating system for developers. Program in fast motion with this worki
 > * ```Super+e``` Open the emoji picker
 > * ```Print``` Take a screenshot
 > * ```Super+-/+``` Volume down/up (it can also be done from the polybar slider)
-> * ```Super+h/l``` Move the workspace to the left/right monitor
-> * ```Super+Ctrl+h/j/k/l``` Resize focussed window (it can also be done with right click + drag)
-> * ```Super+Alt+h/j/k/l``` Move focussed window (it can also be done with left click + drag)
-> * ```Super+Shift+h/j/k/l``` Move the focus to another window
+> * ```Super+←/↑/→/↓``` Move the workspace to the left/right monitor
+> * ```Super+Ctrl+←/↑/→/↓``` Resize focussed window (it can also be done with right click + drag)
+> * ```Super+Alt+←/↑/→/↓``` Move focussed window (it can also be done with left click + drag)
+> * ```Super+Shift+←/↑/→/↓``` Move the focus to another window
 > * ```Super+Shift+b``` Open the browser (default = brave)
 > * ```Super+Shift+e``` Open the file manager (default = ranger)
 > * ```Super+Shift+c``` Open the code editor (default = neovim)
