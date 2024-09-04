@@ -6,7 +6,6 @@
         "custom/terminal",
         "custom/browser",
         "custom/files",
-        "custom/obsidian",
         "custom/spotify",
         "custom/discord",
         "custom/code-editor"
@@ -71,12 +70,6 @@
       "format": "",
       "tooltip": false,
       "on-click": "wezterm -e ranger"
-    },
-
-    "custom/obsidian": {
-      "format": "",
-      "tooltip": false,
-      "on-click": "obsidian"
     },
 
     "custom/spotify": {
