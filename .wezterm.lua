@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
 
 return {
+    enable_wayland = false,
     font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font" }),
     font_size = 12.0,
     color_scheme = "OneDark (base16)",
