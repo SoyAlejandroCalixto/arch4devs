@@ -1,0 +1,62 @@
+@define-color bg #282c34;
+@define-color hover_bg #61afef;
+@define-color fg #ffffff;
+@define-color hover_fg #282c34;
+@define-color debug #00ff00;
+
+*{
+    font-family: 'CaskaydiaCove Nerd Font'
+}
+
+.app {
+  background-color: @bg;
+  border-radius: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.input {
+  color: @fg;
+  font-weight: 700;
+}
+
+.input *:selected,
+.input *:focus,
+*:selected:focus {
+  background-color: @hover_bg;
+  color: @hover_fg;
+}
+
+.item-text {
+  color: @fg;
+}
+.item-name {
+  color: @fg;
+}
+
+.selected.item-box {
+  background-color: @hover_bg;
+  border-radius: 14px;
+}
+.selected.item-box .item-text {
+  color: @hover_fg;
+  font-weight: 700;
+}
+.selected.item-box .item-name {
+  color: @hover_fg;
+}
+.item-shortcut {
+  opacity: 0;
+}
+
+.prefs-btn {
+
+}
+
+.prefs-btn:hover {
+  background-color: @hover_bg;
+}
+
+.no-window-shadow {
+  margin: -20px;
+}

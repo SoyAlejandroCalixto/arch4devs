@@ -87,7 +87,7 @@
     "custom/code-editor": {
       "format": "",
       "tooltip": false,
-      "on-click": "wezterm -e nvim"
+      "on-click": "code"
     },
 
     "hyprland/workspaces": {

@@ -15,8 +15,8 @@ The best operating system for developers. Program in fast motion with this worki
 > * ```Super+q``` Kill focussed window
 > * ```Super+0-9``` Switch to workspace
 > * ```Super+v``` Open the clipboard history
-> * ```Super+e``` Open the emoji picker
-> * ```Print``` Take a screenshot
+> * ```Print``` Takes a screenshot of the selected area
+> * ```Shift+Print``` Takes a screenshot of the selected monitor
 > * ```Super+-/+``` Volume down/up (it can also be done from the polybar slider)
 > * ```Super+←/↑/→/↓``` Move the workspace to the left/right monitor
 > * ```Super+Ctrl+←/↑/→/↓``` Resize focussed window (it can also be done with right click + drag)
@@ -25,8 +25,8 @@ The best operating system for developers. Program in fast motion with this worki
 > * ```Super+Shift+b``` Open the browser (default = brave)
 > * ```Super+Shift+e``` Open the file manager (default = ranger)
 > * ```Super+Shift+c``` Open the code editor (default = neovim)
-> * ```Super+f``` Toggle floating window 
-> * ```Super+p``` Toggle pseudo window 
+> * ```Super+f``` Toggle floating window
+> * ```Super+p``` Toggle pseudo window
 > * ```Super+s``` Toggle vertical/horizontal split (2 or more windows)
 
 ### 🗁 Install guide
@@ -37,9 +37,9 @@ The best operating system for developers. Program in fast motion with this worki
 
 **Install the necessary packages:**
 ~~~
-sudo pacman -S --noconfirm --needed hyprland hyprpaper zsh alsa-utils vlc waybar polkit-kde-agent xdg-desktop-portal-hyprland rofi-wayland fastfetch wl-clipboard wtype rofimoji ranger wezterm neovim discord dunst fontconfig zip unzip p7zip lsd bat
+sudo pacman -S --noconfirm --needed hyprland hyprpaper zsh alsa-utils vlc waybar polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk fastfetch wl-clipboard wtype ranger wezterm discord dunst fontconfig zip unzip p7zip lsd bat
 
-paru -S --noconfirm --needed brave-bin spotify clipton-git grimshot
+paru -S --noconfirm --needed brave-bin ulauncher clipse hyprshot spotify visual-studio-code-bin
 
 chsh -s /bin/zsh
 

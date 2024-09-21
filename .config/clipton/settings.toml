@@ -1,6 +1,0 @@
-max_items = 100
-enable_titles = false
-show_date = false
-show_num_lines = false
-show_icons = false
-rofi_width = "33.3%"
