@@ -15,6 +15,7 @@ The best operating system for developers. Program in fast motion with this worki
 > * ```Super+q``` Kill focussed window
 > * ```Super+0-9``` Switch to workspace
 > * ```Super+v``` Open the clipboard history
+> * ```Super+e``` Open the emoji picker
 > * ```Print``` Takes a screenshot of the selected area
 > * ```Shift+Print``` Takes a screenshot of the selected monitor
 > * ```Super+-/+``` Volume down/up (it can also be done from the polybar slider)
@@ -37,7 +38,7 @@ The best operating system for developers. Program in fast motion with this worki
 
 **Install the necessary packages:**
 ~~~
-sudo pacman -S --noconfirm --needed hyprland hyprpaper zsh alsa-utils vlc waybar polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger wezterm discord dunst fontconfig zip unzip p7zip lsd bat
+sudo pacman -S --noconfirm --needed hyprland hyprpaper zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts vlc waybar polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger wezterm discord dunst fontconfig zip unzip p7zip lsd bat
 
 paru -S --noconfirm --needed brave-bin ulauncher clipse hyprshot spotify visual-studio-code-bin adwaita-qt5-git adwaita-qt6-git
 
@@ -46,6 +47,10 @@ chsh -s /bin/zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ~~~
 
 **Clone the arch4devs repository**
