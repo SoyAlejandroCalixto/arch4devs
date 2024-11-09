@@ -17,6 +17,7 @@
         "tray",
         "custom/audio-slider-icon",
         "pulseaudio/slider",
+        "custom/spotifyTray",
         "custom/cpu-icon",
         "cpu",
         "custom/ram-icon",
@@ -120,6 +121,14 @@
     "memory": {
         "format": "{}%",
         "tooltip": false
+    },
+    "custom/spotifyTray": {
+        "exec": "$HOME/.config/waybar/custom_modules/mediaplayer.py --player spotify",
+        "format": "{} ",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
     },
     "battery": {
         "states": {

@@ -76,7 +76,7 @@ window#waybar {
 
 #cpu {
   padding-right: 8px;
-  background: #507a36;
+  background: #c8792e;
   font-size: 15px;
   font-weight: 700;
 }
@@ -85,12 +85,12 @@ window#waybar {
   font-family: 'Font Awesome 6 Free Solid';
   padding: 0 8px;
   font-size: 15px;
-  background: #507a36;
+  background: #c8792e;
 }
 
 #memory {
   padding-right: 8px;
-  background: #c8792e;
+  background: #9e44b5;
   font-size: 15px;
   font-weight: 700;
 }
@@ -99,7 +99,7 @@ window#waybar {
   font-family: 'Font Awesome 6 Free Solid';
   padding: 0 8px;
   font-size: 15px;
-  background: #c8792e;
+  background: #9e44b5;
 }
 
 #clock {
@@ -164,4 +164,10 @@ window#waybar {
   font-size: 15px;
   margin-left: 12px;
   color: #98c379;
+}
+#custom-spotifyTray {
+  padding-left: 8px;
+  padding-right: 12px;
+  font-size: 15px;
+  background-color: #4f7a36;
 }
