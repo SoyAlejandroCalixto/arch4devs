@@ -120,6 +120,8 @@ class PlayerManager:
             track_info = "Advertisement"
         elif artist is not None and title is not None:
             track_info = f"{title}"
+            if (len(track_info) > 30):
+                track_info = track_info[:30] + "..."
         else:
             track_info = title
 
