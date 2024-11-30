@@ -36,7 +36,7 @@ The best operating system for developers. Program in fast motion with this worki
 * **[Arch Linux](https://wiki.archlinux.org/title/Installation_guide)** (actually you can install it on any Linux distro, but it is focussed and tested on Arch)
 * **An AUR helper** (yay, paru...)
 
-**Install the necessary packages:**
+**Install the necessary stuff:**
 ~~~
 sudo pacman -S --noconfirm --needed hyprland hyprpaper zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd inter-font ttf-font-awesome vlc eog waybar polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger wezterm discord dunst fontconfig zip unzip p7zip lsd bat
 
@@ -51,6 +51,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+git clone https://github.com/hlissner/zsh-autopair ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autopair
 ~~~
 
 **Clone the arch4devs repository**
@@ -63,7 +65,22 @@ Then, **restart your computer** and in your display manager **change the session
 
 ![image](https://i.imgur.com/I2tAl2K.png)
 
-That is all. However, there are some additional adjustments you could make:
+That is all. However, you may need to make some additional adjustments for your special conditions:
+
+<details>
+<summary>Don't you see the workspaces in the top bar?</summary>
+
+Edit ```~/.config/waybar/config.jsonc``` and check this part:
+~~~
+"persistent-workspaces": {
+    "<anything>": [ 1,2,3,4,5,6,7,8,9,10 ],
+    "<anything>": [ 1,2,3,4,5,6,7,8,9,10 ]
+}
+~~~
+Now run ```hyprctl monitors all``` and check the name of your monitors, for example, if you have a monitor connected by HDMI, it is probably called ```HDMI-1```
+
+Replace the ```<anything>``` in the example with that name. If you have more or fewer screens, add or remove items from that object.
+</details>
 
 <details>
 <summary>Configure multiple screens</summary>
