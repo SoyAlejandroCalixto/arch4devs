@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 return {
     enable_wayland = false,
     font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font" }),
-    font_size = 12.0,
+    font_size = 13.0,
     color_scheme = "OneDark (base16)",
     hide_tab_bar_if_only_one_tab = true,
     window_close_confirmation = "NeverPrompt",
