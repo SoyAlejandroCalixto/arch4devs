@@ -38,9 +38,9 @@ The best operating system for developers. Program in fast motion with this worki
 
 **Install the necessary stuff:**
 ~~~
-sudo pacman -S --noconfirm --needed hyprland hyprpaper zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd inter-font ttf-font-awesome vlc eog waybar polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger wezterm discord dunst fontconfig zip unzip p7zip lsd bat
+sudo pacman -S --noconfirm --needed hyprland hyprpaper zsh nvim noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd inter-font ttf-font-awesome vlc eog waybar polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger wezterm discord dunst fontconfig zip unzip p7zip lsd bat
 
-paru -S --noconfirm --needed brave-bin rofi-wayland rofimoji clipse hyprshot spotify visual-studio-code-bin adwaita-qt5-git adwaita-qt6-git
+paru -S --noconfirm --needed brave-bin rofi-wayland rofimoji clipse hyprshot spotify adwaita-qt5-git adwaita-qt6-git
 
 chsh -s /bin/zsh
 
