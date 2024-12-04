@@ -37,7 +37,7 @@ The best operating system for developers. Program in fast motion with this worki
 * **An AUR helper** (yay, paru...)
 
 **Install the necessary stuff:**
-~~~
+~~~bash
 # pacman packages
 sudo pacman -S --noconfirm --needed git neovim hyprland hyprpaper zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd inter-font ttf-font-awesome vlc eog waybar polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger wezterm discord dunst fontconfig zip unzip p7zip lsd bat
 # AUR packages
