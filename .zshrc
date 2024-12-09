@@ -9,7 +9,7 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-fastfetch --logo small --logo-color-1 blue --logo-color-2 blue --color blue --title-color-at green --separator-output-color green -s title:separator:os:kernel:uptime:packages:terminal:cpuUsage:memory
+fastfetch --logo $HOME/.icons/on_terminal_enter.webp --logo-type kitty-direct --logo-padding-right 1 --color blue -s os:kernel:uptime:packages:cpuUsage:memory
 
 alias vim=nvim
 alias rcat=/usr/bin/cat
