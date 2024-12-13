@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-  background-color: #292d34;
+  background-color: #282c34;
   transition-property: background-color;
   transition-duration: .5s;
   font-family: 'CaskaydiaCove Nerd Font';

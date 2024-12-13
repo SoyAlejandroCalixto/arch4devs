@@ -2,6 +2,7 @@ local wezterm = require("wezterm")
 
 return {
     enable_wayland = false,
+    window_background_opacity = 0.8,
     font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font" }),
     font_size = 13,
     freetype_load_target = "Light",

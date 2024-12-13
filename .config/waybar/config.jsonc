@@ -52,7 +52,7 @@
     "custom/rofi": {
       "format": "",
       "tooltip": false,
-      "on-click": "rofi -show drun"
+      "on-click": "rofi -show drun -show-icons -drun-display-format {name}"
     },
 
     "custom/terminal": {
