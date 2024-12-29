@@ -8,19 +8,19 @@
 }
 
 window#waybar {
-  background-color: #282c34;
+  background: #201f21;
   transition-property: background-color;
   transition-duration: .5s;
   font-family: 'CaskaydiaCove Nerd Font';
   color: #ffffff;
   min-height: 28px;
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 14px 14px;
 }
 
 #workspaces button {
-  font-family: 'Font Awesome 6 Free Solid';
+  font-family: 'CaskaydiaCove Nerd Font';
   padding: 0 4px;
-  color: #98c278;
+  color: #c084fc;
   font-size: 16px;
   border-radius: 8px;
 }
@@ -31,17 +31,17 @@ window#waybar {
 
 #workspaces button.empty {
   font-size: 6px;
-  color: #abb3be;
+  color: #77727a;
 }
 
 #workspaces button.active {
-  color : #61afef;
+  color : #60a5fa;
   font-size: 16px;
 }
 
 #pulseaudio-slider {
   padding-right: 5px;
-  background: #c7374a;
+  background: #7e22ce;
 }
 
 #pulseaudio-slider slider {
@@ -53,7 +53,7 @@ window#waybar {
   min-height: 6px;
   min-width: 70px;
   border-radius: 999px;
-  background: #292d34;
+  background: #201f21;
 }
 
 #pulseaudio-slider highlight {
@@ -63,11 +63,11 @@ window#waybar {
 }
 
 #custom-audio-slider-icon {
-  font-family: 'Font Awesome 6 Free Solid';
-  padding: 0 8px;
-  border-radius: 999px 0 0 999px;
+  font-family: 'CaskaydiaCove Nerd Font';
+  padding: 0 10px;
+  border-radius: 0 0 0 14px;
   font-size: 15px;
-  background: #c7374a;
+  background: #7e22ce;
 }
 
 #tray {
@@ -76,98 +76,51 @@ window#waybar {
 
 #cpu {
   padding-right: 8px;
-  background: #c8792e;
+  background: #1d4ed8;
   font-size: 15px;
   font-weight: 700;
 }
 
 #custom-cpu-icon {
-  font-family: 'Font Awesome 6 Free Solid';
-  padding: 0 8px;
+  font-family: 'CaskaydiaCove Nerd Font';
+  padding: 0 10px;
   font-size: 15px;
-  background: #c8792e;
+  background: #1d4ed8;
 }
 
 #memory {
   padding-right: 8px;
-  background: #9e44b5;
+  background: #7e22ce;
   font-size: 15px;
   font-weight: 700;
 }
 
 #custom-ram-icon {
-  font-family: 'Font Awesome 6 Free Solid';
-  padding: 0 8px;
+  font-family: 'CaskaydiaCove Nerd Font';
+  padding: 0 10px;
   font-size: 15px;
-  background: #9e44b5;
+  background: #7e22ce;
 }
 
 #clock {
   padding-right: 8px;
-  background: #3279de;
+  background: #1d4ed8;
   font-size: 15px;
   font-weight: 700;
-  border-radius: 0 0 12px 0;
+  border-radius: 0 0 14px 0;
 }
 
 #custom-clock-icon {
-  font-family: 'Font Awesome 6 Free Solid';
-  padding: 0 8px;
+  font-family: 'CaskaydiaCove Nerd Font';
+  padding: 0 10px;
   font-size: 15px;
-  background: #3279de;
-}
-
-#custom-rofi {
-  font-family: 'Font Awesome 6 Free Solid';
-  font-size: 15px;
-  margin-left: 12px;
-  color: #e5c07b;
-}
-
-#custom-terminal {
-  font-family: 'Font Awesome 6 Free Solid';
-  font-size: 15px;
-  margin-left: 12px;
-  color: #98c379;
-}
-
-#custom-browser {
-  font-family: 'Font Awesome 6 Brands';
-  font-size: 15px;
-  margin-left: 12px;
-  color: #e08f6c;
-}
-
-#custom-files {
-  font-family: 'Font Awesome 6 Free';
-  font-size: 15px;
-  margin-left: 12px;
-  color: #61afef;
+  background: #1d4ed8;
 }
 
 #custom-spotify {
-  font-family: 'Font Awesome 6 Brands';
-  font-size: 15px;
-  margin-left: 12px;
-  color: #98c379;
-}
-
-#custom-discord {
-  font-family: 'Font Awesome 6 Brands';
-  font-size: 15px;
-  margin-left: 12px;
-  color: #6172ef;
-}
-
-#custom-code-editor {
-  font-family: 'Font Awesome 6 Free Solid';
-  font-size: 15px;
-  margin-left: 12px;
-  color: #98c379;
-}
-#custom-spotifyTray {
   padding-left: 8px;
   padding-right: 12px;
   font-size: 15px;
-  background-color: #4f7a36;
+  background-color: #15803d;
+  border-radius: 0 0 14px 14px;
 }
