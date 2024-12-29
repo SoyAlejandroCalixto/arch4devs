@@ -11,7 +11,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-fastfetch --logo $HOME/.local/share/ascii/on_terminal_enter.txt --logo-color-1 blue --logo-color-2 blue --logo-padding-right 1 --color blue -s os:kernel:uptime:packages:cpuUsage:memory --key-type icon --separator "  "
+fastfetch --logo $HOME/.local/share/ascii/on_terminal_enter.txt --logo-color-1 blue --logo-padding-right 2 --color green -s os:kernel:uptime:packages:cpuUsage:memory --key-type icon --separator "  "
 
 alias vim=nvim
 alias rcat=/usr/bin/cat
