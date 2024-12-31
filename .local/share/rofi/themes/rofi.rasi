@@ -1,11 +1,11 @@
     * {
       font:   "CaskaydiaCove Nerd Font 14";
 
-      bg0:    #292d34;
+      bg0:    #211e21;
       fg0:    #aab3bf;
       fg1:    #FFFFFF;
-      fg2:    #61afef80;
-      fg3:    #61afef;
+      fg2:    #60a5fa80;
+      fg3:    #60a5fa;
 
       background-color:   transparent;
       text-color:         @fg0;
