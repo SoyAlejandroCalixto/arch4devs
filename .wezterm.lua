@@ -6,7 +6,7 @@ return {
     font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font" }),
     font_size = 13,
     freetype_load_target = "Light",
-    color_scheme = "OneDark (base16)",
+    color_scheme = "Dracula (Official)",
     hide_tab_bar_if_only_one_tab = true,
     window_close_confirmation = "NeverPrompt",
     use_fancy_tab_bar = false,
