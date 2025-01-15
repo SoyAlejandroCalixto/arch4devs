@@ -63,16 +63,16 @@ return {
     window_background_opacity = 0.9,
     font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font" }),
     font_size = 14,
-    freetype_load_target = "Light",
+    freetype_load_flags = "NO_HINTING",
     color_scheme = "Dracula (Official)",
     window_close_confirmation = "NeverPrompt",
-    window_padding = {
-        right = 0,
-        left = 0,
-        top = 0,
-        bottom = 0,
-    },
     use_fancy_tab_bar = false,
+    window_padding = {
+        left = 0,
+        right = 0,
+        top = 0,
+        bottom = 0
+    },
     colors = {
         tab_bar = {
             background = "#21222c",
