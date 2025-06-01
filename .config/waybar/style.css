@@ -8,11 +8,11 @@
 }
 
 window#waybar {
-  background: #201f21;
+  background: #24273a;
   transition-property: background-color;
   transition-duration: .5s;
   font-family: 'CaskaydiaCove Nerd Font';
-  color: #ffffff;
+  color: #000000;
   min-height: 28px;
   border-radius: 0 0 14px 14px;
 }
@@ -20,7 +20,7 @@ window#waybar {
 #workspaces button {
   font-family: 'CaskaydiaCove Nerd Font';
   padding: 0 4px;
-  color: #c084fc;
+  color: #c6a0f6;
   font-size: 16px;
   border-radius: 8px;
 }
@@ -35,13 +35,13 @@ window#waybar {
 }
 
 #workspaces button.active {
-  color : #60a5fa;
+  color : #8aadf4;
   font-size: 16px;
 }
 
 #pulseaudio-slider {
   padding-right: 5px;
-  background: #7e22ce;
+  background: #c6a0f6;
 }
 
 #pulseaudio-slider slider {
@@ -53,13 +53,13 @@ window#waybar {
   min-height: 6px;
   min-width: 70px;
   border-radius: 999px;
-  background: #201f21;
+  background: #f4dbd6;
 }
 
 #pulseaudio-slider highlight {
   min-width: 6px;
   border-radius: 999px;
-  background: #ffffff;
+  background: #000000;
 }
 
 #custom-audio-slider-icon {
@@ -67,7 +67,7 @@ window#waybar {
   padding: 0 10px;
   border-radius: 0 0 0 14px;
   font-size: 15px;
-  background: #7e22ce;
+  background: #c6a0f6;
 }
 
 #tray {
@@ -76,7 +76,7 @@ window#waybar {
 
 #cpu {
   padding-right: 8px;
-  background: #1d4ed8;
+  background: #8aadf4;
   font-size: 15px;
   font-weight: 700;
 }
@@ -85,12 +85,12 @@ window#waybar {
   font-family: 'CaskaydiaCove Nerd Font';
   padding: 0 10px;
   font-size: 15px;
-  background: #1d4ed8;
+  background: #8aadf4;
 }
 
 #memory {
   padding-right: 8px;
-  background: #7e22ce;
+  background: #c6a0f6;
   font-size: 15px;
   font-weight: 700;
 }
@@ -99,12 +99,12 @@ window#waybar {
   font-family: 'CaskaydiaCove Nerd Font';
   padding: 0 10px;
   font-size: 15px;
-  background: #7e22ce;
+  background: #c6a0f6;
 }
 
 #clock {
   padding-right: 8px;
-  background: #1d4ed8;
+  background: #8aadf4;
   font-size: 15px;
   font-weight: 700;
   border-radius: 0 0 14px 0;
@@ -114,13 +114,13 @@ window#waybar {
   font-family: 'CaskaydiaCove Nerd Font';
   padding: 0 10px;
   font-size: 15px;
-  background: #1d4ed8;
+  background: #8aadf4;
 }
 
 #custom-spotify {
   padding-left: 8px;
   padding-right: 12px;
   font-size: 15px;
-  background-color: #15803d;
+  background-color: #a6da95;
   border-radius: 0 0 14px 14px;
 }

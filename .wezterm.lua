@@ -32,25 +32,25 @@ wezterm.on('update-right-status', function(window, pane)
     end
 
     local elements = {
-        { Foreground = { Color = "#c084fc" } },
+        { Foreground = { Color = "#c6a0f6" } },
         { Text = utf8.char(0xe0b2) },
         { Foreground = { Color = "#000000" } },
-        { Background = { Color = "#c084fc" } },
+        { Background = { Color = "#c6a0f6" } },
         { Text = cwd },
-        { Foreground = { Color = "#60a5fa" } },
+        { Foreground = { Color = "#8aadf4" } },
         { Text = utf8.char(0xe0b2) },
         { Foreground = { Color = "#000000" } },
-        { Background = { Color = "#60a5fa" } },
+        { Background = { Color = "#8aadf4" } },
         { Text = hostname },
-        { Foreground = { Color = "#c084fc" } },
+        { Foreground = { Color = "#c6a0f6" } },
         { Text = utf8.char(0xe0b2) },
         { Foreground = { Color = "#000000" } },
-        { Background = { Color = "#c084fc" } },
+        { Background = { Color = "#c6a0f6" } },
         { Text = packages },
-        { Foreground = { Color = "#60a5fa" } },
+        { Foreground = { Color = "#8aadf4" } },
         { Text = utf8.char(0xe0b2) },
         { Foreground = { Color = "#000000" } },
-        { Background = { Color = "#60a5fa" } },
+        { Background = { Color = "#8aadf4" } },
         { Text = uptime },
     }
 
@@ -64,7 +64,7 @@ return {
     font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font" }),
     font_size = 14,
     freetype_load_flags = "NO_HINTING",
-    color_scheme = "Dracula (Official)",
+    color_scheme = "Catppuccin Macchiato",
     window_close_confirmation = "NeverPrompt",
     use_fancy_tab_bar = false,
     window_padding = {
@@ -76,11 +76,11 @@ return {
     colors = {
         tab_bar = {
             background = "#21222c",
-            active_tab = { bg_color = "#c084fc", fg_color = "#000000" },
-            inactive_tab = { bg_color = "#2e1065", fg_color = "#6273a5" },
-            inactive_tab_hover = { bg_color = "#2e1065", fg_color = "#6273a5"},
-            new_tab = { bg_color = "#2e1065", fg_color = "#6273a5" },
-            new_tab_hover = { bg_color = "#2e1065", fg_color = "#6273a5" },
+            active_tab = { bg_color = "#c6a0f6", fg_color = "#000000" },
+            inactive_tab = { bg_color = "#25074B", fg_color = "#c6a0f6" },
+            inactive_tab_hover = { bg_color = "#25074B", fg_color = "#c6a0f6"},
+            new_tab = { bg_color = "#25074B", fg_color = "#c6a0f6" },
+            new_tab_hover = { bg_color = "#25074B", fg_color = "#c6a0f6" },
         },
     },
 }
