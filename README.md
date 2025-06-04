@@ -39,9 +39,9 @@ The best operating system for developers. Program in fast motion with this worki
 **Install the necessary stuff:**
 ~~~bash
 # pacman packages
-sudo pacman -S --noconfirm --needed git github-cli neovim hyprland hyprpaper zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd inter-font vlc eog waybar polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk python-gobject gnome-themes-extra fastfetch wl-clipboard wtype ranger ripgrep zoxide atuin wezterm discord dunst fontconfig zip unzip p7zip lsd bat
+sudo pacman -S --noconfirm --needed git github-cli neovim hyprland hyprpaper lua lua-lgi playerctl socat zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd inter-font vlc eog polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger ripgrep zoxide atuin wezterm discord dunst fontconfig zip unzip p7zip lsd bat
 # AUR packages
-paru -S --noconfirm --needed brave-bin rofi-wayland rofimoji clipton hyprshot spotify adwaita-qt5-git adwaita-qt6-git
+paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji clipton hyprshot spotify adwaita-qt5-git adwaita-qt6-git
 # shell stuff
 chsh -s /bin/zsh && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && git clone https://github.com/hlissner/zsh-autopair ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autopair
 ~~~
@@ -59,18 +59,26 @@ Then, **restart your computer** and in your display manager **change the session
 That is all. However, you may need to make some additional adjustments for your special conditions:
 
 <details>
-<summary>Don't you see the workspaces in the top bar?</summary>
+<summary>Do you want the top bar to appear on all your monitors?</summary>
 
-Edit ```~/.config/waybar/config.jsonc``` and check this part:
+Edit ```~/.config/eww/eww.yuck``` and check this part:
 ~~~
-"persistent-workspaces": {
-    "<anything>": [ 1,2,3,4,5,6,7,8,9,10 ],
-    "<anything>": [ 1,2,3,4,5,6,7,8,9,10 ]
-}
+(defwindow topbar0
+  :monitor 0
+  :geometry (geometry :x "0%" :y "0%" :width "100%" :height "28px" :anchor "top center")
+  :stacking "fg"
+  :reserve (struts :distance "28px" :side "top")
+  :windowtype "dock"
+  :wm-ignore false
+  (topbar))
 ~~~
-Now run ```hyprctl monitors all``` and check the name of your monitors, for example, if you have a monitor connected by HDMI, it is probably called ```HDMI-1```
+Duplicate that block of code below and change ```topbar0``` to ```topbar1``` and ```:monitor 0``` to ```:monitor 1```.
 
-Replace the ```<anything>``` in the example with that name. If you have more or fewer screens, add or remove items from that object.
+Now edit ```~/.config/hypr/autostart.conf``` and add ```&& eww open topbar1``` to this line so that it opens at startup next to the other one:
+~~~
+exec-once = eww daemon && eww open topbar0 && eww open topbar1
+~~~
+Repeat this process with as many screens as you want.
 </details>
 
 <details>

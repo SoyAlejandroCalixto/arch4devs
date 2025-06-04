@@ -1,0 +1,133 @@
+* {
+  all: unset;
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.topbar {
+  background: #24273a;
+  color: #000000;
+  border-radius: 0 0 14px 14px;
+}
+
+.spotify-container {
+  background: #a6da95;
+  border-radius: 0 0 14px 14px;
+}
+.spotify-info {
+  font-size: 15px;  
+  padding: 0 12px;
+  transition: padding 0.1s ease;
+}
+.spotify-container:hover .spotify-info {
+  padding: 0 24px;
+}
+.spotify-icon {
+  font-size: 16px;
+  padding-right: 12px;
+}
+
+.clock-box {
+  background: #8aadf4;
+  border-radius: 0 0 14px 0;
+  padding: 0 8px;
+}
+.clock-icon {
+  font-size: 16px;
+  padding-right: 12px;
+}
+
+.volume-box {
+  background: #c6a0f6;
+}
+.volume-icon {
+  font-size: 17px;
+  padding: 0 12px;  
+}
+.volume-slider {
+  padding-right: 12px;
+  border-radius: 999px;
+}
+.volume-slider trough {
+  background: #f4dbd6;
+  border-radius: 999px;
+  min-height: 6px;
+  min-width: 80px;
+  transition: min-height 0.1s ease, min-width 0.1s ease;
+}
+.volume-slider highlight {
+  all: unset;
+  background: #000000;
+  border-radius: 999px;
+}
+.volume-slider slider {
+  background: #000000;
+  border-radius: 999px;
+  margin: -6px;
+  transition: margin 0.1s ease;
+}
+.volume-slider:hover slider {
+  margin: -8px;
+}
+.volume-slider:hover trough {
+  min-height: 8px;
+  min-width: 120px;
+}
+
+.ram-box {
+  background: #8aadf4;
+  padding: 0 12px;
+}
+.ram-icon {
+  font-size: 17px;
+  padding-right: 12px;
+}
+
+.cpu-box {
+  background: #c6a0f6;
+  padding: 0 12px;
+  border-radius: 0 0 0 14px;
+}
+.cpu-icon {
+  font-size: 17px;
+  padding-right: 12px;
+}
+
+.workspaces-container {
+  background: #363a4f;
+  border-radius: 0 0 14px 14px;
+  padding: 0 12px;
+}
+
+.workspace-button>* {
+  font-size: 17px;
+  min-width: 24px;
+  transition: font-size 0.1s ease, min-width 0.1s ease;
+}
+
+.workspace-button.empty>* {
+  color: #a5adcb;
+  font-size: 7px;
+}
+
+.workspace-button.occupied>* {
+  color: #c6a0f6;
+}
+
+.workspace-button.active>* {
+  color: #8aadf4;
+}
+
+.workspace-button:hover>* {
+  min-width: 36px;
+  font-size: 21px;
+}
+
+.workspace-button.empty:hover>* {
+  font-size: 11px;
+}
+
+.tray-container>*>*>* {
+  margin-right: 8px;
+}

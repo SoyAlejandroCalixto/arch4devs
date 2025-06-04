@@ -1,0 +1,102 @@
+;; POLLS & LISTENS
+(defpoll time :interval "1s"  "date '+%H:%M'")
+(defpoll cpu :interval "3s" "bash -c ~/.config/eww/scripts/get-cpu-usage.sh")
+(defpoll ram  :interval "3s" "free | grep Mem | awk '{printf \"%.0f\", ($3/$2) * 100.0}'")
+
+(deflisten volume "bash -c ~/.config/eww/scripts/volume-listener.sh")
+(deflisten spotify_info "lua ~/.config/eww/scripts/spotify-listener.lua")
+(deflisten workspaces "lua ~/.config/eww/scripts/workspaces-listener.lua")
+
+;; SPOTIFY WIDGET
+(defwidget spotify []
+  (box :visible {spotify_info != ""}
+    (eventbox :class "spotify-container"
+              :onscroll "bash -c '[ \"{}\" = \"up\" ] && playerctl --player=spotify next || playerctl --player=spotify previous'"
+              :onclick "playerctl --player=spotify play-pause"
+      (box :class "spotify-info" :space-evenly false :hexpand false
+        (label :class "spotify-icon" :text "󰓇")
+        (label :class "spotify-text"
+               :text "${spotify_info ?: ''}"
+               :limit-width 40
+               :show_truncated false)))))
+
+;; WORKSPACES WIDGET
+(defwidget workspaces []
+  (box :class "workspaces-container" :space-evenly false
+    (for ws in {workspaces.workspaces ?: []}
+      (eventbox :onclick "hyprctl dispatch workspace ${ws.id}"
+                :class "workspace-button ${ws.active ? 'active' : ''} ${ws.occupied ? 'occupied' : 'empty'}"
+        (label :text "${ws.active ? '' : ws.occupied ? '' : ''}")))))
+
+;; SYSTEM INFO WIDGET
+(defwidget system_info []
+  (box :class "system-container" :space-evenly false :hexpand false
+
+    ;; Tray icons
+    (box :class "tray-container" :space-evenly false :halign "end"
+      (systray :icon-size 16 :prepend-new false))
+
+    ;; CPU
+    (box :class "cpu-box" :space-evenly false
+      (label :class "cpu-icon"  :text "")
+      (label :class "cpu-value" :text "${cpu}%"))
+
+    ;; RAM
+    (box :class "ram-box" :space-evenly false
+      (label :class "ram-icon"  :text "")
+      (label :class "ram-value" :text "${ram}%"))
+
+    ;; Volume
+    (box :class "volume-box" :space-evenly false
+      ;; Icon
+      (eventbox
+        :onclick "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        (label :class "volume-icon" :text {volume == 0 ? "󰸈" : volume < 50 ? "󰖀" : "󰕾"}))
+      ;; Slider
+      (box
+        (eventbox
+          :onscroll "[ '{}' = 'up' ] && wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+ || wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-"
+          (scale :class "volume-slider"
+                 :value volume
+                 :min 0 :max 101
+                 :onchange "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ {}%"
+                 :width 60))))
+
+    ;; Clock
+    (box :class "clock-box" :space-evenly false
+      (label :class "clock-icon" :text "󰥔")
+      (label :class "clock" :text time))))
+
+;; TOPBAR
+(defwidget topbar []
+  (centerbox :class "topbar"
+    (box :halign "start" :hexpand false (spotify))
+    (box :halign "center" :hexpand false (workspaces))
+    (box :halign "end"   :hexpand false (system_info))))
+
+;; WINDOWS
+(defwindow topbar0
+  :monitor 0
+  :geometry (geometry :x "0%" :y "0%" :width "100%" :height "28px" :anchor "top center")
+  :stacking "fg"
+  :reserve (struts :distance "28px" :side "top")
+  :windowtype "dock"
+  :wm-ignore false
+  (topbar))
+
+(defwindow topbar1
+  :monitor 1
+  :geometry (geometry :x "0%" :y "0%" :width "100%" :height "28px" :anchor "top center")
+  :stacking "fg"
+  :reserve (struts :distance "28px" :side "top")
+  :windowtype "dock"
+  :wm-ignore false
+  (topbar))
+
+(defwindow css
+  :monitor 0
+  :geometry (geometry :x "0" :y "0" :width "0" :height "0")
+  :stacking "fg"
+  :focusable false
+  :visible false
+  "")

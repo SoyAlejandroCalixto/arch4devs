@@ -5,7 +5,7 @@
       fg0:    #aab3bf;
       fg1:    #FFFFFF;
       fg2:    #60a5fa80;
-      fg3:    #60a5fa;
+      fg3:    #8aadf4;
 
       background-color:   transparent;
       text-color:         @fg0;
