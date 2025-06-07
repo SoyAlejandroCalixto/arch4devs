@@ -1,6 +1,6 @@
 * {
   all: unset;
-  font-family: monospace;
+  font-family: Onest;
   font-weight: 700;
   font-size: 15px;
 }
@@ -24,6 +24,7 @@
   padding: 0 24px;
 }
 .spotify-icon {
+  font-family: monospace;
   font-size: 16px;
   padding-right: 12px;
 }
@@ -34,6 +35,7 @@
   padding: 0 8px;
 }
 .clock-icon {
+  font-family: monospace;
   font-size: 16px;
   padding-right: 12px;
 }
@@ -42,6 +44,7 @@
   background: #c6a0f6;
 }
 .volume-icon {
+  font-family: monospace;
   font-size: 17px;
   padding: 0 12px;  
 }
@@ -80,6 +83,7 @@
   padding: 0 12px;
 }
 .ram-icon {
+  font-family: monospace;
   font-size: 17px;
   padding-right: 12px;
 }
@@ -90,6 +94,7 @@
   border-radius: 0 0 0 14px;
 }
 .cpu-icon {
+  font-family: monospace;
   font-size: 17px;
   padding-right: 12px;
 }
@@ -101,6 +106,7 @@
 }
 
 .workspace-button>* {
+  font-family: monospace;
   font-size: 17px;
   min-width: 24px;
   transition: font-size 0.1s ease, min-width 0.1s ease;

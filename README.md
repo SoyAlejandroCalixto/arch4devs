@@ -38,11 +38,13 @@ The best operating system for developers. Program in fast motion with this worki
 
 **Install the necessary stuff:**
 ~~~bash
-# pacman packages
-sudo pacman -S --noconfirm --needed git github-cli neovim hyprland hyprpaper lua lua-lgi playerctl socat zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd inter-font vlc eog polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger ripgrep zoxide atuin wezterm discord dunst fontconfig zip unzip p7zip lsd bat
+# Pacman packages
+sudo pacman -S --noconfirm --needed git github-cli neovim hyprland hyprpaper lua lua-lgi playerctl socat zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd vlc eog polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger ripgrep zoxide atuin wezterm discord dunst fontconfig zip unzip p7zip lsd bat
 # AUR packages
 paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji clipton hyprshot spotify adwaita-qt5-git adwaita-qt6-git
-# shell stuff
+# Fonts that do not exist as a package
+mkdir -p ~/local/share/fonts && curl -A "Mozilla/5.0" -L -o ~/.local/share/fonts/Onest.ttf https://raw.githubusercontent.com/simpals/onest/refs/heads/main/fonts/variable/Onest%5Bwght%5D.ttf
+# Shell stuff
 chsh -s /bin/zsh && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && git clone https://github.com/hlissner/zsh-autopair ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autopair
 ~~~
 
