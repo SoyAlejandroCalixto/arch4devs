@@ -9,7 +9,7 @@ The best operating system for developers. Program in fast motion with this worki
 **Default shortcuts**
 >
 > * ```Super+Enter``` Open terminal (default = wezterm)
-> * ```Super+Space``` Open the laucher
+> * ```Super+Space``` Open the launcher
 > * ```Super+q``` Kill focussed window
 > * ```Super+0-9``` Switch to workspace
 > * ```Super+v``` Open the clipboard history
