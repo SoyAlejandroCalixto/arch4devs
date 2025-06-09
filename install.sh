@@ -38,4 +38,3 @@ else
     trap 'kill $!' EXIT # kill the process that keeps sudo without password
 fi
 
-
