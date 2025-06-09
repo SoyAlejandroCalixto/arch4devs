@@ -35,7 +35,7 @@ else
 
     echo -e "\e[32mFinished. Restart your computer with 'reboot' command.\e[0m\n"
 
-    trap 'kill $!' EXIT # kill the process that keeps sudo without password   
+    trap 'kill $!' EXIT # kill the process that keeps sudo without password
 fi
 
 
