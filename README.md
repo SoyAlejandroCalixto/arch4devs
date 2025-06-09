@@ -6,8 +6,6 @@ The best operating system for developers. Program in fast motion with this worki
 
 ![arch4devs screenshot](https://i.imgur.com/Haq6Vhe.png)
 
-**Note:** If you already have an Arch Linux installation with any other desktop environment than Hyprland, this installation will not conflict with your current Arch, i.e. you can have this working environment in parallel without compromising your current operating system.
-
 **Default shortcuts**
 >
 > * ```Super+Enter``` Open terminal (default = wezterm)
@@ -18,7 +16,6 @@ The best operating system for developers. Program in fast motion with this worki
 > * ```Super+e``` Open the emoji picker
 > * ```Print``` Takes a screenshot of the selected area
 > * ```Shift+Print``` Takes a screenshot of the selected monitor
-> * ```Super+-/+``` Volume down/up (it can also be done from the polybar slider)
 > * ```Super+←/↑/→/↓``` Move the workspace to the left/right monitor
 > * ```Super+Ctrl+←/↑/→/↓``` Resize focussed window (it can also be done with right click + drag)
 > * ```Super+Alt+←/↑/→/↓``` Move focussed window (it can also be done with left click + drag)
@@ -30,38 +27,60 @@ The best operating system for developers. Program in fast motion with this worki
 > * ```Super+p``` Toggle pseudo window
 > * ```Super+s``` Toggle vertical/horizontal split (2 or more windows)
 
-### 🗁 Install guide
+### 📁 Install
 
 **Prerequisites:**
-* **[Arch Linux](https://wiki.archlinux.org/title/Installation_guide)** (actually you can install it on any Linux distro, but it is focussed and tested on Arch)
-* **An AUR helper** (yay, paru...)
+* **A minimal installation of [Arch Linux](https://archlinux.org/)**
+    > I recommend doing an installation with the [archinstall](https://wiki.archlinux.org/title/Archinstall_(Espa%C3%B1ol)) command choosing Hyprland as desktop. It is as simple as, once you boot the Arch Linux ISO, type ```archinstall``` and follow the simple menu that appears. It is the fastest and easiest way.
 
-**Install the necessary stuff:**
+**Clone this repo and run the ```install.sh``` script:**
 ~~~bash
-# Pacman packages
-sudo pacman -S --noconfirm --needed git github-cli neovim hyprland hyprpaper lua lua-lgi playerctl socat zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd vlc eog polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger ripgrep zoxide atuin wezterm discord dunst fontconfig zip unzip p7zip lsd bat
-# AUR packages
-paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji clipton hyprshot spotify adwaita-qt5-git adwaita-qt6-git
-# Fonts that do not exist as a package
-mkdir -p ~/.local/share/fonts && curl -A "Mozilla/5.0" -L -o ~/.local/share/fonts/Onest.ttf https://raw.githubusercontent.com/simpals/onest/refs/heads/main/fonts/variable/Onest%5Bwght%5D.ttf
-# Shell stuff
-chsh -s /bin/zsh && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && git clone https://github.com/hlissner/zsh-autopair ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autopair
+git clone https://github.com/SoyAlejandroCalixto/arch4devs ~/arch4devs && cd ~/arch4devs
+./install.sh
 ~~~
-
-**Clone the arch4devs repository**
-~~~
-git clone https://github.com/SoyAlejandroCalixto/arch4devs.git
-~~~
-And put all its contents in your ```/home/<user>``` folder *(except the readme, the license and the .gitignore)*
+> *Once the installation is finished, you can delete the ```~/arch4devs``` directory.*
 
 Then, **restart your computer** and in your display manager **change the session to ```Hyprland```** and log in.
 
 ![image](https://i.imgur.com/I2tAl2K.png)
 
-That is all. However, you may need to make some additional adjustments for your special conditions:
+**That is all**. However, you may need to make some additional adjustments for your special conditions:
 
 <details>
-<summary>Do you want the top bar to appear on all your monitors?</summary>
+<summary>Change wallpaper</summary>
+
+Go to ```~/.config/hypr/hyprpaper.conf``` and replace the paths of ```preload``` and ```wallpaper```:
+~~~
+preload = /your/wallpaper/path
+wallpaper = , /your/wallpaper/path
+~~~
+</details>
+
+<details>
+<summary>Configure multiple screens</summary>
+
+Run ```hyprctl monitors all``` and check the name of your monitors, for example, if you have a monitor connected by HDMI, it is probably called ```HDMI-1```.
+
+Go to ```~/.config/hypr/monitors.conf```, delete the auto config and replace it with this format: ```name,resolution,position,scale```
+
+For example, if you have two monitors with the names ```HDMI-1``` and ```DP-1```, this would be a standard configuration:
+~~~
+monitor=HDMI-1,1920x1080@75,0x0,1
+monitor=DP-1,1920x1080@60,1920x0,1
+~~~
+</details>
+
+<details>
+<summary>Change key binds</summary>
+
+Go to ```~/.config/hypr/binds.conf``` and follows the structure of the other key binds in the file:
+~~~
+bind = SUPER SHIFT, K, exec, any-command
+~~~
+</details>
+
+<details>
+<summary>Make the top bar appear on all monitors</summary>
 
 Edit ```~/.config/eww/eww.yuck``` and check this part:
 ~~~
@@ -81,37 +100,4 @@ Now edit ```~/.config/hypr/autostart.conf``` and add ```&& eww open topbar1``` t
 exec-once = eww daemon && eww open topbar0 && eww open topbar1
 ~~~
 Repeat this process with as many screens as you want.
-</details>
-
-<details>
-<summary>Configure multiple screens</summary>
-
-Run ```hyprctl monitors all``` and check the name of your monitors, for example, if you have a monitor connected by HDMI, it is probably called ```HDMI-1```.
-
-Go to ```~/.config/hypr/monitors.conf```, delete the auto config and replace it with this format: ```name,resolution,position,scale```
-
-For example, if you have two monitors with the names ```HDMI-1``` and ```DP-1```, this would be a standard configuration:
-~~~
-monitor=HDMI-1,1920x1080@75,0x0,1
-monitor=DP-1,1920x1080@60,1920x0,1
-~~~
-</details>
-
-<details>
-<summary>Change wallpaper</summary>
-
-Go to ```~/.config/hypr/hyprpaper.conf``` and replace the paths of ```preload``` and ```wallpaper```:
-~~~
-preload = /your/wallpaper/path
-wallpaper = , /your/wallpaper/path
-~~~
-</details>
-
-<details>
-<summary>Change key binds</summary>
-
-Go to ```~/.config/hypr/binds.conf``` and follows the structure of the other key binds in the file:
-~~~
-bind = SUPER SHIFT, K, exec, any-command
-~~~
 </details>
