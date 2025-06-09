@@ -1,4 +1,4 @@
-if [ ! -e "/ruta/al/archivo_o_directorio" ]; then # Check if 'arch4devs' was cloned in the correct path
+if [ ! -e "~/arch4devs" ]; then # Check if 'arch4devs' was cloned in the correct path
     echo -e "\e[31mError: '~/arch4devs' directory not found. The installation cannot proceed.\e[0m"
 else
     sudo -v # make sudo never ask me for a password
