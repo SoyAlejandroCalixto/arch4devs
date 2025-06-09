@@ -14,6 +14,7 @@ else
     fi
 
     echo -e "\e[34mInstalling necessary packages...\e[0m"
+    sudo pacman -Syu --noconfirm --needed
     sudo pacman -S --noconfirm --needed git github-cli neovim hyprland hyprpaper lua lua-lgi playerctl socat zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd vlc eog polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger ripgrep zoxide atuin wezterm discord dunst fontconfig zip unzip p7zip lsd bat
     paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji clipton hyprshot spotify adwaita-qt5-git adwaita-qt6-git
 
