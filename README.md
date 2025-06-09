@@ -1,10 +1,10 @@
-![welcome to arch4devs](https://i.imgur.com/jkrusw8.png)
+![welcome to arch4devs](https://i.imgur.com/z5MxNfc.png)
 
 ## Arch Linux working environment for developers
 
 The best operating system for developers. Program in fast motion with this working environment 🚀.
 
-![arch4devs screenshot](https://i.imgur.com/J7XCmLB.png)
+![arch4devs screenshot](https://i.imgur.com/Haq6Vhe.png)
 
 **Note:** If you already have an Arch Linux installation with any other desktop environment than Hyprland, this installation will not conflict with your current Arch, i.e. you can have this working environment in parallel without compromising your current operating system.
 
