@@ -3,6 +3,7 @@ if [ ! -e "$HOME/arch4devs" ]; then # Check if 'arch4devs' was cloned in the cor
 else
     sudo -v # make sudo never ask me for a password
     while true; do sudo -n true; sleep 60; done 2>/dev/null &
+    SUDO_PID=$!
 
     if ! command -v paru &> /dev/null; then
         echo -e "\e[34mParu is not installed, installing...\e[0m"
@@ -10,7 +11,7 @@ else
         cd ~/paru-git
         makepkg -si
         cd ~/
-        sudo rm -rf ~/paru-git  
+        sudo rm -rf ~/paru-git
     fi
 
     echo -e "\e[34mInstalling necessary packages...\e[0m"
@@ -19,7 +20,9 @@ else
     paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji clipton hyprshot spotify adwaita-qt5-git adwaita-qt6-git
 
     mkdir -p ~/.local/share/fonts # -> Fonts that do not exist as a package
-    curl -A "Mozilla/5.0" -L -o ~/.local/share/fonts/Onest.ttf https://raw.githubusercontent.com/simpals/onest/refs/heads/main/fonts/variable/Onest%5Bwght%5D.ttf
+    git clone https://github.com/simpals/onest.git /tmp/onest
+    mv /tmp/onest/fonts/ttf/*.ttf "$HOME/.local/share/fonts/"
+    rm -rf /tmp/onest
 
     echo -e "\e[34mInstalling shell stuff...\e[0m"
     chsh -s /bin/zsh
@@ -35,6 +38,5 @@ else
 
     echo -e "\e[32mFinished. Restart your computer with 'reboot' command.\e[0m\n"
 
-    trap 'kill $!' EXIT # kill the process that keeps sudo without password
+    trap "kill $SUDO_PID 2>/dev/null" EXIT # kill the process that keeps sudo without password
 fi
-
