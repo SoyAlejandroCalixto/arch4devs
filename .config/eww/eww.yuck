@@ -4,19 +4,19 @@
 (defpoll ram  :interval "3s" "free | grep Mem | awk '{printf \"%.0f\", ($3/$2) * 100.0}'")
 
 (deflisten volume "bash -c ~/.config/eww/scripts/volume-listener.sh")
-(deflisten spotify_info "lua ~/.config/eww/scripts/spotify-listener.lua")
+(deflisten ytmusic_info "lua ~/.config/eww/scripts/ytmusic-listener.lua")
 (deflisten workspaces "lua ~/.config/eww/scripts/workspaces-listener.lua")
 
 ;; SPOTIFY WIDGET
-(defwidget spotify []
-  (box :visible {spotify_info != ""}
-    (eventbox :class "spotify-container"
-              :onscroll "bash -c '[ \"{}\" = \"up\" ] && playerctl --player=spotify next || playerctl --player=spotify previous'"
-              :onclick "playerctl --player=spotify play-pause"
-      (box :class "spotify-info" :space-evenly false :hexpand false
-        (label :class "spotify-icon" :text "󰓇")
-        (label :class "spotify-text"
-               :text "${spotify_info ?: ''}"
+(defwidget ytmusic []
+  (box :visible {ytmusic_info != "" }
+    (eventbox :class "ytmusic-container"
+              :onscroll "bash -c '[ \"{}\" = \"up\" ] && playerctl --player=chromium next || playerctl --player=chromium previous'"
+              :onclick "playerctl --player=chromium play-pause"
+      (box :class "ytmusic-info" :space-evenly false :hexpand false
+        (label :class "ytmusic-icon" :text "󰎇") 
+        (label :class "ytmusic-text"
+               :text "${ytmusic_info ?: ''}"
                :limit-width 40
                :show_truncated false)))))
 
@@ -70,7 +70,7 @@
 ;; TOPBAR
 (defwidget topbar []
   (centerbox :class "topbar"
-    (box :halign "start" :hexpand false (spotify))
+    (box :halign "start" :hexpand false (ytmusic))
     (box :halign "center" :hexpand false (workspaces))
     (box :halign "end"   :hexpand false (system_info))))
 

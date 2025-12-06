@@ -11,19 +11,19 @@
   border-radius: 0 0 14px 14px;
 }
 
-.spotify-container {
-  background: #a6da95;
+.ytmusic-container {
+  background: #8aadf4;
   border-radius: 0 0 14px 14px;
 }
-.spotify-info {
+.ytmusic-info {
   font-size: 15px;  
   padding: 0 12px;
   transition: padding 0.1s ease;
 }
-.spotify-container:hover .spotify-info {
+.ytmusic-container:hover .ytmusic-info {
   padding: 0 24px;
 }
-.spotify-icon {
+.ytmusic-icon {
   font-family: monospace;
   font-size: 16px;
   padding-right: 12px;
