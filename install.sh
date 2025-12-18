@@ -1,3 +1,7 @@
+sudo -v # make sudo never ask me for a password
+while true; do sudo -n true; sleep 60; done 2>/dev/null &
+SUDO_PID=$!
+
 if [ ! -e "$HOME/arch4devs" ]; then # Check if 'arch4devs' was cloned in the correct path
     echo -e "\e[31mError: '~/arch4devs' directory not found. The installation cannot proceed.\e[0m"
 else
@@ -40,3 +44,5 @@ else
 
     trap "kill $SUDO_PID 2>/dev/null" EXIT # kill the process that keeps sudo without password
 fi
+
+trap "kill $SUDO_PID 2>/dev/null" EXIT # kill the process that keeps sudo without password
