@@ -7,7 +7,7 @@ else
 
     if ! command -v paru &> /dev/null; then
         echo -e "\e[34mParu is not installed, installing...\e[0m"
-        git clone https://aur.archlinux.org/paru.git ~/paru-git
+        git clone https://aur.archlinux.org/paru.git ~/paru
         cd ~/paru
         makepkg -si
         cd ~/
