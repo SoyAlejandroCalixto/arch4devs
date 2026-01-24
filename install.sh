@@ -5,10 +5,11 @@ else
     while true; do sudo -n true; sleep 60; done 2>/dev/null &
     SUDO_PID=$!
 
+    sudo pacman -S --noconfirm --needed base-devel
+
     if ! command -v paru &> /dev/null; then
         echo -e "\e[34mParu is not installed, installing...\e[0m"
         git clone https://aur.archlinux.org/paru.git ~/paru
-sudo pacman -S --noconfirm --needed base-devel
         cd ~/paru
         makepkg -si
         cd ~/
