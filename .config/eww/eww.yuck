@@ -26,7 +26,7 @@
     (for ws in {workspaces.workspaces ?: []}
       (eventbox :onclick "hyprctl dispatch workspace ${ws.id}"
                 :class "workspace-button ${ws.active ? 'active' : ''} ${ws.occupied ? 'occupied' : 'empty'}"
-        (label :text "${ws.active ? '' : ws.occupied ? '' : ''}")))))
+        (label :text "${ws.active ? '' : ''}")))))
 
 ;; SYSTEM INFO WIDGET
 (defwidget system_info []

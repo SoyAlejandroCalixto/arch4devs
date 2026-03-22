@@ -1,3 +1,13 @@
+$fg1: #24273a;
+$blue: #8aadf4;
+$purple: #c6a0f6;
+$workspaces-container-bg: #363a4f;
+$bg1: #a5adcb;
+$bg2: #6e738d;
+$sep: 16px;
+$round: 14px;
+$icon-size: 17px;
+
 * {
   all: unset;
   font-family: Onest;
@@ -7,66 +17,65 @@
 
 .topbar {
   background: rgba(36, 39, 58, 0.70);
-  color: #000000;
-  border-radius: 0 0 14px 14px;
+  color: $fg1;
+  border-radius: 0 0 $round $round;
 }
 
 .ytmusic-container {
-  background: #8aadf4;
-  border-radius: 0 0 14px 14px;
+  background: $blue;
+  border-radius: 0 0 $round $round;
 }
 .ytmusic-info {
-  font-size: 15px;  
-  padding: 0 12px;
+  padding: 0 $sep;
   transition: padding 0.1s ease;
 }
 .ytmusic-container:hover .ytmusic-info {
-  padding: 0 24px;
+  padding: 24px;
 }
 .ytmusic-icon {
   font-family: monospace;
-  font-size: 16px;
-  padding-right: 12px;
+  font-size: $icon-size;
+  padding-right: $sep;
 }
 
 .clock-box {
-  background: #8aadf4;
-  border-radius: 0 0 14px 0;
-  padding: 0 8px;
+  background: $blue;
+  border-radius: 0 0 $round 0;
+  padding: 0 $sep;
 }
 .clock-icon {
   font-family: monospace;
-  font-size: 16px;
+  font-size: $icon-size;
   padding-right: 12px;
 }
 
 .volume-box {
-  background: #c6a0f6;
+  background: $purple;
 }
 .volume-icon {
   font-family: monospace;
-  font-size: 17px;
-  padding: 0 12px;  
+  font-size: $icon-size;
+  padding: 0 $sep;  
 }
 .volume-slider {
-  padding-right: 12px;
-  border-radius: 999px;
+  padding-right: $sep;
+  border-radius: $round;
 }
 .volume-slider trough {
-  background: #f4dbd6;
-  border-radius: 999px;
+  background: $bg2;
+  border-radius: $round;
   min-height: 6px;
   min-width: 80px;
   transition: min-height 0.1s ease, min-width 0.1s ease;
 }
 .volume-slider highlight {
   all: unset;
-  background: #000000;
-  border-radius: 999px;
+  background: $fg1;
+  border-radius: $round;
 }
 .volume-slider slider {
-  background: #000000;
-  border-radius: 999px;
+  background: $fg1;
+  border-radius: $round;
   margin: -6px;
   transition: margin 0.1s ease;
 }
@@ -79,69 +88,76 @@
 }
 
 .ram-box {
-  background: #8aadf4;
-  padding: 0 12px;
+  background: $blue;
+  padding: 0 $sep;
 }
 .ram-icon {
   font-family: monospace;
-  font-size: 17px;
-  padding-right: 12px;
+  font-size: $icon-size;
+  padding-right: $sep;
 }
 
 .cpu-box {
-  background: #c6a0f6;
-  padding: 0 12px;
-  border-radius: 0 0 0 14px;
+  background: $purple;
+  padding: 0 $sep;
+  border-radius: 0 0 0 $round;
 }
 .cpu-icon {
   font-family: monospace;
-  font-size: 17px;
-  padding-right: 12px;
+  font-size: $icon-size;
+  padding-right: $sep;
 }
 
 .workspaces-container {
-  background: #363a4f;
-  border-radius: 0 0 14px 14px;
-  padding: 0 12px;
+  background: $workspaces-container-bg;
+  border-radius: 0 0 $round $round;
+  padding: 0 $sep;
 }
 
 .workspace-button>* {
   font-family: monospace;
-  font-size: 17px;
-  min-width: 24px;
-  transition: font-size 0.1s ease, min-width 0.1s ease;
+  padding: 0 10px;
+  transition: font-size 0.1s ease, padding 0.1s ease, background-color 0.1s ease;
 }
 
 .workspace-button.empty>* {
-  color: #a5adcb;
-  font-size: 7px;
+  color: $bg1;
+  font-size: 5px;
+  margin: 2px 0 0 0;
 }
 
 .workspace-button.occupied>* {
-  color: #c6a0f6;
+  color: $purple;
+  font-size: 9px;
 }
 
 .workspace-button.active>* {
-  color: #8aadf4;
+  color: $workspaces-container-bg;
+  font-size: 15px;
+  border-radius: $round;
+  background-color: $blue;
+  padding: 0 10px 0 9px;
+  min-height: 22px;
+  margin: 3px 0;
 }
 
 .workspace-button:hover>* {
-  min-width: 36px;
-  font-size: 21px;
+  padding: 0 18px;
 }
 
 .workspace-button.empty:hover>* {
-  font-size: 11px;
+  font-size: 8px;
+}
+
+.workspace-button.occupied:hover>* {
+  font-size: 12px;
+}
+
+.workspace-button.active:hover>* {
+  font-size: 18px;
+  padding: 0 14px 0 13px;
 }
 
 .tray-container>*>*>* {
-  margin-right: 8px;
-}
-
-.tray-container>*>*>*>*:last-child {
-  color: #ffffff;
-  background-color: #24273a;
-  border-radius: 14px;
-  padding: 12px;
-  border: 3px solid #8aadf4;
+  margin-right: 10px;
 }
