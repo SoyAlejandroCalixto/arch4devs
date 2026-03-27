@@ -1,53 +1,40 @@
 * {
     font: "Onest Bold 14";
-
     margin: 0;
     padding: 0;
     spacing: 0;
-
-    bg0: #24273a;
-    fg0: #a5adcb;
-    fg1: #FFFFFF;
-    fg2: #8aadf480;
-    fg3: #8aadf4;
-
     background-color: transparent;
-    text-color: @fg0;
+    text-color: @unselected-text;
+
+    bg: #24273add;
+    selected-text: #181926;
+    unselected-text: #a5adcb;
+    placeholder: #8aadf480;
+    blue: #8aadf4;
 }
 window {
-    background-color: @bg0;
+    background-color: @bg;
     location: center;
     width: 670;
     border-radius: 20;
     border: 5px;
-    border-color: @fg3;
+    border-color: @blue;
 }
 inputbar {
     font: "Onest Bold 24";
-    padding: 20px;
-    spacing: 20px;
+    padding: 30px 20px;
     children: [ entry ];
 }
 entry {
     font: inherit;
     placeholder: "???";
-    placeholder-color: @fg2;
-    color: @fg3;
-}
-message {
-    border: 2px 0 0;
-    border-color: @bg0;
-    background-color: @bg0;
-}
-textbox {
-    padding: 8px 24px;
+    placeholder-color: @placeholder;
+    color: @blue;
 }
 listview {
     lines: 10;
     columns: 1;
     fixed-height: false;
-    border: 1px 0 0;
-    border-color: @bg0;
     margin: 0px 0px 10px 0px;
 }
 element {
@@ -58,8 +45,8 @@ element {
     background-color: transparent;
 }
 element selected normal, element selected active {
-    background-color: @fg3;
-    text-color: @bg0;
+    background-color: @blue;
+    text-color: @selected-text;
 }
 element-icon {
     size: 1em;
