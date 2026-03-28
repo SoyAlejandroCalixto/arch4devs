@@ -1,11 +1,15 @@
-wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2 * 100)}'
+get_volume() {
+  volume="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
 
-# Listen for volume changes and return the current volume percentage.
-pactl subscribe | grep --line-buffered "Event 'change' on sink" | while IFS= read -r _; do
-    volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
-    if echo "$volume" | grep -q "MUTED"; then
-        echo 0
-    else
-        echo "$volume" | awk '{print int($2 * 100)}'
-    fi
+  if [[ "$volume" == *MUTED* ]]; then
+    echo 0
+  else
+    awk '{print int($2 * 100)}' <<< "$volume"
+  fi
+}
+
+get_volume
+
+pactl subscribe | grep --line-buffered -E "Event 'change' on sink|Evento 'cambiar' en destino" | while IFS= read -r _; do
+  get_volume
 done
