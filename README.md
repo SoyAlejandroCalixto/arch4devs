@@ -29,22 +29,16 @@ The best operating system for developers. Program in fast motion with this worki
 
 ### 📁 Install
 
-**Prerequisites:**
-* **A minimal installation of [Arch Linux](https://archlinux.org/)**
-    > I recommend doing an installation with the [archinstall](https://wiki.archlinux.org/title/Archinstall_(Espa%C3%B1ol)) command choosing Hyprland as desktop. It is as simple as, once you boot the Arch Linux ISO, type ```archinstall``` and follow the simple menu that appears. It is the fastest and easiest way.
+* Perform a **clean installation** of Arch Linux using **`archinstall`** with the Hyprland desktop environment.
 
-**Clone this repo and run the ```install.sh``` script:**
+* **Clone this repo and run the `install.sh` script:**
 ~~~bash
 git clone https://github.com/SoyAlejandroCalixto/arch4devs ~/arch4devs && cd ~/arch4devs
 ./install.sh
 ~~~
 > *Once the installation is finished, you can delete the ```~/arch4devs``` directory.*
 
-Then, **restart your computer** and in your display manager **change the session to ```Hyprland```** and log in.
-
-![image](https://i.imgur.com/I2tAl2K.png)
-
-**That is all**. However, you may need to make some additional adjustments for your special conditions:
+Then restart and **that is all**. However, you may need to make some additional adjustments for your special conditions:
 
 <details>
 <summary>Change wallpaper</summary>

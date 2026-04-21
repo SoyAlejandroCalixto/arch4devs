@@ -17,14 +17,48 @@ else
     fi
 
     echo -e "\e[34mInstalling necessary packages...\e[0m"
-    sudo pacman -Syu --noconfirm --needed
-    sudo pacman -S --noconfirm --needed git github-cli neovim hyprland hyprpaper lua lua-lgi playerctl socat zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd vlc eog polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger ripgrep zoxide atuin wezterm discord dunst fontconfig zip unzip p7zip lsd bat
-    paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji clipton hyprshot pear-desktop adwaita-qt5-git adwaita-qt6-git
+    # Set the best mirror
+    sudo pacman -Syu --needed --noconfirm reflector
+    sudo reflector --latest 10 --age 1 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+    # Remove unused archinstall base packages
+    sudo pacman -Rns --noconfirm dolphin vim kitty
+
+    # Install all packages
+    sudo pacman -Syu --noconfirm --needed git github-cli neovim hyprland hyprpaper lua lua-lgi playerctl socat zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd vlc eog polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger nemo zoxide atuin wezterm discord dunst fontconfig zip unzip p7zip lsd bat fzf bitwarden
+    paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji cliphist hyprshot pear-desktop cloudflare-warp-bin fnn
 
     mkdir -p ~/.local/share/fonts # -> Fonts that do not exist as a package
     git clone https://github.com/simpals/onest.git /tmp/onest
     mv /tmp/onest/fonts/ttf/*.ttf "$HOME/.local/share/fonts/"
     rm -rf /tmp/onest
+
+
+    # Install kernel zen
+    sudo pacman -S --needed --noconfirm linux-zen linux-zen-headers
+    paru -S --needed --noconfirm update-grub
+    sudo update-grub
+
+    # NVIDIA or AMD drivers
+    if lspci | grep -i "nvidia" &> /dev/null; then
+        # NVIDIA stuff
+        sudo pacman -S --needed --noconfirm nvidia-dkms nvidia-utils nvidia-settings opencl-nvidia cuda lib32-nvidia-utils vulkan-icd-loader egl-wayland
+        sudo nvidia-xconfig
+
+        KERNEL_MODULES="nvidia nvidia_modeset nvidia_uvm nvidia_drm"
+        sudo sed -i "s/MODULES=()/MODULES=(${KERNEL_MODULES})/" /etc/mkinitcpio.conf
+
+        echo "options nvidia_drm modeset=1 fbdev=1" | sudo tee /etc/modprobe.d/nvidia.conf &> /dev/null
+        sudo mkinitcpio -P
+
+        # Disable nouveau if you are using it
+        if lsmod | grep nouveau &> /dev/null; then
+            echo "blacklist nouveau" | sudo tee /etc/modprobe.d/nouveau.conf &> /dev/null
+        fi
+    else
+        # AMD stuff
+        sudo pacman -S --noconfirm --needed linux-firmware mesa lib32-mesa opencl-mesa rocm-opencl-runtime vulkan-radeon lib32-vulkan-radeon amdvlk lib32-amdvlk
+    fi
 
     echo -e "\e[34mInstalling shell stuff...\e[0m"
     chsh -s /bin/zsh
@@ -33,6 +67,19 @@ else
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
     git clone https://github.com/hlissner/zsh-autopair ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autopair
+
+    # Ranger config and plugins
+    mkdir -p $HOME/.config/ranger/plugins
+    git clone https://github.com/alexanderjeurissen/ranger_devicons $HOME/.config/ranger/plugins/ranger_devicons
+    echo "default_linemode devicons" >> $HOME/.config/ranger/rc.conf
+    git clone https://github.com/maximtrp/ranger-archives.git $HOME/.config/ranger/plugins/ranger-archives
+    echo "set preview_images true" >> $HOME/.config/ranger/rc.conf
+    echo "set preview_images_method iterm2" >> $HOME/.config/ranger/rc.conf
+
+    # Cloudflare Warp config
+    sudo systemctl enable warp-svc
+    sudo systemctl start warp-svc
+    warp-cli registration new
 
     echo -e "\e[34mInstalling arch4devs...\e[0m"
     cp -r ~/arch4devs/. ~/

@@ -18,3 +18,5 @@ alias rcat=/usr/bin/cat
 alias cat=bat
 alias rls=/usr/bin/ls
 alias ls=lsd
+
+eval "$(fnm env --use-on-cd --shell zsh)"
