@@ -4,8 +4,8 @@
 (defpoll ram  :interval "3s" "free | grep Mem | awk '{printf \"%.0f\", ($3/$2) * 100.0}'")
 
 (deflisten volume "bash -c ~/.config/eww/scripts/volume-listener.sh")
-(deflisten ytmusic_info "lua ~/.config/eww/scripts/ytmusic-listener.lua")
-(deflisten workspaces "lua ~/.config/eww/scripts/workspaces-listener.lua")
+(deflisten ytmusic_info "lua5.4 ~/.config/eww/scripts/ytmusic-listener.lua")
+(deflisten workspaces "lua5.4 ~/.config/eww/scripts/workspaces-listener.lua")
 
 ;; SPOTIFY WIDGET
 (defwidget ytmusic []
