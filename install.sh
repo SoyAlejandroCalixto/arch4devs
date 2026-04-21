@@ -26,7 +26,7 @@ else
 
     # Install all packages
     sudo pacman -Syu --noconfirm --needed git github-cli neovim hyprland hyprpaper lua lua-lgi playerctl socat zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd vlc eog polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger nemo zoxide atuin wezterm discord dunst fontconfig zip unzip p7zip lsd bat fzf bitwarden
-    paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji cliphist hyprshot pear-desktop cloudflare-warp-bin fnn
+    paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji cliphist hyprshot pear-desktop cloudflare-warp-bin fnm
 
     mkdir -p ~/.local/share/fonts # -> Fonts that do not exist as a package
     git clone https://github.com/simpals/onest.git /tmp/onest
