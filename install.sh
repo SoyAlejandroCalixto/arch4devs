@@ -22,7 +22,7 @@ echo -e "\e[34mInstalling necessary packages...\e[0m"
 sudo pacman -Syu --needed --noconfirm reflector # Set the best mirror
 sudo reflector --latest 10 --age 1 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
-sudo pacman -Rns --noconfirm dolphin vim kitty wofi # Remove unused
+sudo pacman -Rns --noconfirm dolphin vim kitty wofi grim # Remove unused
 
 sudo pacman -Syu --noconfirm --needed git github-cli neovim hyprland hyprpaper lua lua54 lua54-lgi playerctl socat zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd vlc eog polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger nemo zoxide atuin wezterm discord dunst fontconfig zip unzip p7zip lsd bat fzf bitwarden
 paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji cliphist hyprshot pear-desktop cloudflare-warp-bin fnm
