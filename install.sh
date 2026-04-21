@@ -25,16 +25,12 @@ sudo reflector --latest 10 --age 1 --protocol https --sort rate --save /etc/pacm
 sudo pacman -Rns --noconfirm dolphin vim kitty wofi # Remove unused
 
 sudo pacman -Syu --noconfirm --needed git github-cli neovim hyprland hyprpaper lua lua54 lua54-lgi playerctl socat zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd vlc eog polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger nemo zoxide atuin wezterm discord dunst fontconfig zip unzip p7zip lsd bat fzf bitwarden
-paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji cliphist hyprshot pear-desktop update-grub cloudflare-warp-bin fnm
+paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji cliphist hyprshot pear-desktop cloudflare-warp-bin fnm
 
 mkdir -p ~/.local/share/fonts # Install fonts that do not exist as a package
 git clone https://github.com/simpals/onest.git /tmp/onest
 mv /tmp/onest/fonts/ttf/*.ttf "$HOME/.local/share/fonts/"
 rm -rf /tmp/onest
-
-# Install kernel zen
-sudo pacman -S --needed --noconfirm linux-zen linux-zen-headers
-sudo update-grub
 
 if lspci | grep -i "nvidia" &> /dev/null; then # If you have an NVIDIA GPU
     sudo pacman -S --needed --noconfirm nvidia-dkms nvidia-utils nvidia-settings opencl-nvidia cuda lib32-nvidia-utils vulkan-icd-loader egl-wayland
