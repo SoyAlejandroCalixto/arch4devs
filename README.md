@@ -8,7 +8,7 @@ The best operating system for developers. Program in fast motion with this worki
 
 **Default shortcuts**
 >
-> * ```Super+Enter``` Open terminal (default = wezterm)
+> * ```Super+Enter``` Open terminal (default = ghostty)
 > * ```Super+Space``` Open the launcher
 > * ```Super+q``` Kill focussed window
 > * ```Super+0-9``` Switch to workspace

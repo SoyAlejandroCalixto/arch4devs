@@ -7,7 +7,7 @@ sudo -v # Prevent sudo from asking for your password again
 while true; do sudo -n true; sleep 60; done 2>/dev/null &
 SUDO_PID=$!
 
-sudo pacman -S --noconfirm --needed base-devel # Required for building AUR pkgs
+sudo pacman -Syu --noconfirm --needed base-devel # Required for building AUR pkgs
 
 if ! command -v paru &> /dev/null; then
     echo -e "\e[34mParu is not installed, installing...\e[0m"
@@ -19,13 +19,13 @@ if ! command -v paru &> /dev/null; then
 fi
 
 echo -e "\e[34mInstalling necessary packages...\e[0m"
-sudo pacman -Syu --needed --noconfirm reflector # Set the best mirror
+sudo pacman -S --needed --noconfirm reflector # Set the best mirror
 sudo reflector --latest 10 --age 1 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
-sudo pacman -Rns --noconfirm dolphin vim kitty wofi grim # Remove unused
+sudo pacman -Rns --noconfirm vim kitty wofi grim # Remove unused
 
-sudo pacman -Syu --noconfirm --needed git github-cli neovim hyprland hyprpaper lua lua54 lua54-lgi playerctl socat zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd vlc eog polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype ranger nemo zoxide atuin wezterm discord dunst fontconfig zip unzip p7zip lsd bat fzf bitwarden
-paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji cliphist hyprshot pear-desktop cloudflare-warp-bin fnm
+sudo pacman -S --noconfirm --needed git github-cli neovim hyprland hyprpaper lua lua54 lua54-lgi playerctl socat zsh noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd mpv eog polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype yazi dolphin zoxide atuin zsh-autosuggestions zsh-syntax-highlighting ghostty discord dunst fontconfig lsd bat fzf bitwarden
+paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji cliphist hyprshot pear-desktop fnm
 
 mkdir -p ~/.local/share/fonts # Install fonts that do not exist as a package
 git clone https://github.com/simpals/onest.git /tmp/onest
@@ -52,24 +52,6 @@ fi
 
 # Shell stuff
 chsh -s /bin/zsh
-export RUNZSH=no && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/hlissner/zsh-autopair ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autopair
-
-# Ranger config and plugins
-mkdir -p $HOME/.config/ranger/plugins
-git clone https://github.com/alexanderjeurissen/ranger_devicons $HOME/.config/ranger/plugins/ranger_devicons
-echo "default_linemode devicons" >> $HOME/.config/ranger/rc.conf
-git clone https://github.com/maximtrp/ranger-archives.git $HOME/.config/ranger/plugins/ranger-archives
-echo "set preview_images true" >> $HOME/.config/ranger/rc.conf
-echo "set preview_images_method iterm2" >> $HOME/.config/ranger/rc.conf
-
-# Cloudflare Warp config
-sudo systemctl enable warp-svc
-sudo systemctl start warp-svc
-warp-cli registration new
 
 # Clone dotfiles
 echo -e "\e[34mInstalling arch4devs...\e[0m"
