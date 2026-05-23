@@ -24,8 +24,8 @@ sudo reflector --latest 10 --age 1 --protocol https --sort rate --save /etc/pacm
 
 sudo pacman -Rns --noconfirm vim kitty wofi grim # Remove unused
 
-sudo pacman -S --noconfirm --needed git github-cli neovim hyprland hyprpaper lua lua54 lua54-lgi playerctl socat zsh starship noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd mpv eog polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype yazi dolphin zoxide atuin zsh-autosuggestions zsh-syntax-highlighting ghostty discord dunst fontconfig lsd bat fzf bitwarden
-paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji cliphist hyprshot pear-desktop fnm
+sudo pacman -S --noconfirm --needed git github-cli neovim hyprland hyprpaper lua lua54 lua54-lgi mise direnv playerctl socat zsh starship noto-fonts-emoji adobe-source-han-sans-jp-fonts ttf-cascadia-code-nerd mpv eog polkit-kde-agent xdg-desktop-portal-hyprland xdg-desktop-portal-gtk gnome-themes-extra fastfetch wl-clipboard wtype yazi dolphin zoxide atuin zsh-autosuggestions zsh-syntax-highlighting ghostty discord dunst fontconfig lsd bat fzf bitwarden
+paru -S --noconfirm --needed brave-bin eww rofi-wayland rofimoji cliphist hyprshot pear-desktop
 
 mkdir -p ~/.local/share/fonts # Install fonts that do not exist as a package
 git clone https://github.com/simpals/onest.git /tmp/onest
@@ -33,7 +33,7 @@ mv /tmp/onest/fonts/ttf/*.ttf "$HOME/.local/share/fonts/"
 rm -rf /tmp/onest
 
 if lspci | grep -i "nvidia" &> /dev/null; then # If you have an NVIDIA GPU
-    sudo pacman -S --needed --noconfirm nvidia-dkms nvidia-utils nvidia-settings opencl-nvidia cuda lib32-nvidia-utils vulkan-icd-loader egl-wayland
+    sudo pacman -S --needed --noconfirm nvidia-dkms nvidia-utils nvidia-settings opencl-nvidia lib32-nvidia-utils vulkan-icd-loader egl-wayland
     sudo nvidia-xconfig
 
     KERNEL_MODULES="nvidia nvidia_modeset nvidia_uvm nvidia_drm"

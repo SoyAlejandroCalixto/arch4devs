@@ -12,4 +12,5 @@ cursor-style = bar
 cursor-style-blink = true
 
 shell-integration = zsh
+shell-integration-features = ssh-env,ssh-terminfo
 window-theme = ghostty
