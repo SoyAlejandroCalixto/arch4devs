@@ -10,4 +10,4 @@ alias rls=/usr/bin/ls
 alias ls=lsd
 
 eval "$(starship init zsh)"
-
+eval "$(mise activate zsh)"
